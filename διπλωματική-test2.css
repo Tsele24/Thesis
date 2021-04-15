@@ -1,0 +1,295 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}/* Chrome, Safari, Edge, Opera κρλυβει τα πάνω κάτω βελάκια στο input text */
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+body{
+    background-color: rgb(156, 213, 228);
+    font-size:small;
+    padding: 0%;
+    border-spacing: 0px;
+    
+}
+table{
+  font-family:cursive;
+}
+.act_tables{
+    position:relative;
+    
+    empty-cells:show;
+    border-top: 1px;
+   
+    border-spacing: 0px;
+    height:1px;
+    margin: 0%;
+    padding:0px
+
+}
+
+h5{
+    padding:0px;
+    margin-top:0px;
+    margin-bottom:5px;
+    margin-right: 0px;
+    font-family:cursive;
+    font-weight:normal;
+    font-size: small;
+    border-collapse: collapse;
+}
+h4{
+    font-family:cursive;
+    margin:0px;
+    color: rgb(0, 0, 0)
+}
+h3{
+    font-family:cursive;/*εχω βαλει σε αυτό το ταγκ του τίτλους των πινάκων*/
+    text-align: center;
+    font-weight:normal;
+    color: rgb(0, 0, 0);
+}
+
+#sectables{
+    padding: 0px;
+    height:30px;
+   
+}
+img{
+    
+    background-color: rgb(156, 213, 228);
+    width:350px;
+    height:100px;
+}
+
+
+.Tables{
+    position:relative;
+   
+    empty-cells:show;
+    border-top: 1px;
+    height:1px;
+    margin: 0%;
+    padding:0px
+
+}
+/* td{
+    width:auto;
+    
+} */
+
+#intables-2{
+    padding-right:80px;
+    width:80%;
+    /* position:relative; */
+    top:-5px;
+}
+
+#calc{
+    position:relative;
+    right:auto;
+    left:100px;
+}
+
+#csv_table th{ 
+    font-size: small;
+    font-weight: bold;
+    
+    text-align:left;
+    background-color: rgb(106, 175, 255)
+
+}
+#csv_table{
+    border-collapse: collapse;
+  border-spacing: 0;
+  
+  border: 1px solid rgb(151, 151, 151);
+
+}
+
+#csv_table td,#csv_table th{
+    border: 1px solid rgb(151, 151, 151);
+    border-collapse: collapse;
+
+}
+
+#csv_table tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+  
+  
+ 
+#csv_table_Sums th{
+    font-weight: bold;
+    font-size: small;
+    
+    text-align:left;
+    background-color:rgb(106, 175, 255)
+   }
+
+   #csv_table_Sums{
+    border-collapse: collapse;
+  border-spacing: 0;
+ 
+  border: 1px solid rgb(151, 151, 151);
+  position:relative;
+  left:150px;
+  
+}
+
+#csv_table_Sums td,#csv_table_Sums th{
+    border: 1px solid rgb(151, 151, 151);
+    border-collapse: collapse;
+   
+}
+
+#csv_table_Sums tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+  
+  
+   * {
+    box-sizing: border-box;
+  }
+                   
+   /* #save_btn{
+
+   } */
+   .row {
+    display: flex;
+    margin-left:-5px;
+    margin-right:-5px;
+    position: relative;
+  }
+  
+  .column {
+    flex: 50%;
+  }
+  .button {
+    background-color: rgb(106, 175, 255); 
+    border: none;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+  }
+  .file_label{
+    padding: 5px 15px;
+    font-size: 13px;
+    text-align: center;
+    font-family:cursive;
+    cursor: pointer;
+    outline: none;
+    background-color: rgb(106, 175, 255);
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+    border: none;
+    }
+    .file_label:hover{
+        box-shadow: 0 6px 6px  0 rgba(0,0,0,0.24),0 17px 30px 0 rgba(0,0,0,0.19);
+    }
+    .button:hover {
+        box-shadow: 0 6px 6px  0 rgba(0,0,0,0.24),0 17px 30px 0 rgba(0,0,0,0.19);
+      }
+
+
+    
+   
+
+    #el{
+        background-color: rgb(106, 175, 255); 
+        border: none;
+        padding: 5px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 13px;
+        /* margin: 4px 2px; */
+        cursor: pointer;
+        
+    }
+    #eng{
+        background-color: rgb(106, 175, 255); 
+        border: none;
+        padding: 5px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 13px;
+        cursor: pointer;
+        width:40px;
+    }
+    
+
+    .button {
+        position: relative;
+        border: none;
+        font-family: cursive;
+        text-align: center;
+        transition-duration: 0.4s;
+        text-decoration: none;
+        overflow: hidden;
+        cursor: pointer;
+      }
+      
+      .button:after {
+        content: "";
+        background: #f1f1f1;
+        display: block;
+        position: absolute;
+        padding-top: 300%;
+        padding-left: 350%;
+        margin-left: -20px !important;
+        margin-top: -120%;
+        opacity: 0;
+        transition: all 0.8s
+      }
+      
+      .button:active:after {
+        padding: 0;
+        margin: 0;
+        opacity: 1;
+        transition: 0s
+      }
+
+      @media print{
+      
+        body{visibility: hidden;}
+        #del{visibility: hidden;}
+        /*#delbtn{visibility: hidden;}*/
+      #print-container{
+        visibility: visible;
+        position:absolute;
+        left: 5px; 
+        top: 0px;
+        
+      }
+    
+    
+
+    }
+    input[type=text],input[type=number],input[type=date]{
+      font-family:cursive;
+    }
+    
+    .select{
+      font-family: cursive;
+    }
+    #legend_center2{
+      position: relative;
+      left:50px;
+    }
+    #groupbox2{
+      height:269.9px;
+    }
+    #groypbox3{
+      height:268.6px;
+    }

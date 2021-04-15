@@ -1,0 +1,140 @@
+<meta charset="UTF-8">
+<meta name="web application">
+<link rel="stylesheet" href="διπλωματική-test2.css">
+<title>Web app auth</title>
+</head>
+<body style="padding-left:40px;">
+<script src="διπλωματική.js" ></script>
+<script src="data_base.js" ></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+ 
+<div style="">
+<table>
+<tr>
+<td>
+<button type="submit" id="el"><img src="greece-flag-png-xl.png" alt="Submit"style="width:25px;height:20px;" ></button>
+</td>
+<td>
+<button type="submit" id="eng"><img src="england_PNG7.png" alt="Submit"style="width:25px;height:20px;" ></button>
+</td>
+</tr>
+</table>
+</div>
+<table id="intables" >
+
+<tr> 
+<td colspan=><h5>Ημερομηνία</h5></td><td><input id="date" type="date"></td><td></td><td style="padding-left:50px;"><h5>Άνοιγμα και Ενημέρωση αρχείου :</h5></td>
+<td><input type="file" id="MyFile" style="display:none;" onchange="processFile()"><i class="fas fa-file-csv" style="font-size:22px;"></i>
+                <label for="MyFile" class="file_label" id="loaded_file" >Άνοιγμα αρχείου</label></td>
+<td><img  src="logo-web page.png" style="margin-left:100px;"><td></td>
+</tr>
+</table>
+<table id="intables-2">
+<tr>
+<td><h5>Εξέταση</h5></td><td><select name="Sel kit" id="kit" style="width: 60%" class="select" onchange="ClearSolidAndLiquidWaste();Clear_otherKit();St_values();Calc_kBq();" >
+                    <option value="" selected disabled hidden>-</option>
+                    <option value="FT3">FT3</option>
+                    <option value="FT4">FT4</option>
+                    <option value="TSH">TSH</option>
+                    <option value="TgAb">TgAb</option>
+                    <option value="TPO">TPO</option>
+                    <option value="rTSH-Ab">rTSH-Ab</option>
+                    <option value="Tg">Tg</option>
+                    <option value="CEA">CEA</option>
+                    <option value="CA 19-9">CA 19-9</option>
+                    <option value="AchRAb">AchRAb</option>
+                    <option value="CA 125">CA 125</option>
+                    <option value="CA 15-3">CA 15-3</option>
+                    <option value="AFP">AFP</option>
+                    <option value="TPSA">TPSA</option>
+                    <option value="FPSA">FPSA</option>
+                    <option value="RENIN">RENIN</option>
+                    <option value="ALDO">ALDO</option>
+                    <option value="Δ4">Δ4</option>
+                    <option value="CALCITONIN">CALCITONIN</option>
+                    <option value="25-OH">25-OH</option>
+                    <option value="ACTH">ACTH</option>
+                    <option value="Other">Other</option>
+                      </select>
+                      <input type="text" style="width: 57%" id="ukit" disabled></td>
+<td><h5>Κατασκευαστής</h5></td>
+<td> <select  name="Manurer" id="manu" class="select" style="width: 65%" onclick="EnTubes()" onchange="Clear_otherManu();St_values();Calc_kBq();">
+                    <option value="" selected disabled hidden>-</option>
+                    <option value="BECKMAN">BECKMAN COULTER</option>
+                    <option value="BRAHMS">BRAHMS</option>
+                    <option value="CIS">CIS BIO</option>
+                    <option value="DIASOURCE">DIASOURCE</option>
+                    <option value="DIASORIN">DIASORIN</option>
+                    <option value="IBL">IBL</option>
+                    <option value="IZOTOP">IZOTOP</option>
+                    <option value="LAB SUPPLIES">LAB SUPPLIES</option>
+                    <option value="RIAZENCO">RIAZENCO</option>
+                    <option value="ZENTECH">ZENTECH</option>
+                    <option value="Other">Other</option>
+                   </select>
+                   <input type="text" style="width: 65%" id="umanu" disabled></td>
+<td><h5>RIA/IRMA</h5></td><td><select type="name" style="width: 100px" id="method" class="select" >
+                <option value="none" selected disabled hidden>-</option>
+                <option value="RIA">RIA</option>
+                <option value="IRMA">IRMA</option>
+                 </select></td>
+<td><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#σωληναρίων</h5></td><td><input type="number" id="tubes" style="width: 50px;" ></td>
+</tr>
+
+</table>
+<div  style="padding-left:300px;"><h5>Οι υπολογισμοί να γίνουν με:</h5></div>
+<table>
+<!--<tr><td><div><h5><input type="checkbox">ονομαστική ενεργότητα του kit</h5></div></td><td><div><h5><input type="checkbox">μετρούμενες τιμές cpm του kit</h5></div></td><td><div style="padding-left:10px;padding-bottom:5px"><h5>Υπολογισμοί</h5></div></td></tr>-->
+<tr><td><fieldset class="groupbox-border" id="groupbox1">
+<legend class="groupbox-border"><h5><input type="checkbox" id="nominal" onchange="Checkbox1();">ονομαστική ενεργότητα του kit</h5></legend>
+<table class="Tables"><tr><td></td><td  colspan="2"><h5>Ονομ. ενργότητα <br>tracer (kBq)</h5></td><td><input id="tTracer" type="number"></td></tr>
+<tr><td></td><td colspan="2"><h5>Συνολικός όγκος <br>tracer (ml)</h5></td><td><input id="tVolTracer" type="number"></td></tr>
+<tr><td></td><td colspan="2"><h5>Όγκος tracer ανά <br>σωληνάριο (ml)</h5></td><td><input id="VolPerTube" type="number"></td></tr>
+<tr><td></td><td colspan="2"><h5>Ενεργότητα ανά <br>σωληνάριο (kBq)</h5></td><td><input id="theoRadPerTube" type="number"></td></tr>
+<tr><td></td><td colspan="2"><h5>Κρούσεις ανά <br>σωληνάριο (cpm)</h5></td><td><input id="theoCpmPerTube" type="number"></td></tr></table>
+</fieldset>
+</td>
+<td><fieldset class="groupbox-border" id="groupbox2">
+<legend class="groupbox-border"><h5><input type="checkbox" id="my_cpm" onchange="Checkbox2();" >μετρούμενες τιμές cpm του kit</h5></legend>
+ <table class="Tables" ><tr><td></td><td><h5>Τυπικές μετρ. κρούσεις <br>ανά σωληνάριο (cpm)</h5></td><td><input id="measCpmPerTube" type="number" onchange="Calc_kBq();"></td></tr>
+<tr><td></td><td><h5><input type="checkbox" id="myTotalBox" onchange="Calc_kBq();">Ίδιες μετρ.κρούσεις <br>ανά σωληνάριο (cpm)</h5></td><td><input id="myTotal" type="number" onkeyup="Calc_kBq();" ></td></tr>
+<tr ><td></td><td><h5>Μετρ. ενεργότητα  <br>ανά σωληνάριο (kBq)</h5></td><td><input id="measRadPerTube" type="number"></td></tr>
+<tr><td><h5>&nbsp;</h5></td></tr>
+<tr><td></td><td><h5 >Ευαισθησία <br> γ-counter (%)</h5></td><td><input id="efficiency" value="79.2335" type="number"></td></tr>
+</table>
+</fieldset>
+</td>
+<td><fieldset class="groupbox-border" id="groupbox3">
+<legend class="groupbox-border"><h5>Υπολογισμοί</h5></legend>
+<table class="Tables" ><tr><td></td><td colspan="2"><h5>Ποσοστό <br> στερεών (%)</h5></td><td><input id="perSol" type="number" onkeyup="PercentageCorretion1()"></td></tr>
+<tr><td></td><td colspan="2"><h5>Ποσοστό <br> υγρών (%)</h5></td><td><input id="perLiq" type="number" onkeyup="PercentageCorretion2()"></td></tr>
+<tr><td colspan="2"><div class="calc"><button id="calc" class="button"  onclick="Calcs();"><i class='fas fa-radiation-alt' style='font-size:15px;'></i>&nbsp;&nbsp;Υπολογισμός</button></div></td></tr>
+<tr><td></td><td colspan="2"><h5>Στερεά απόβλητα <br>(kBq)</h5></td><td><input id="sol_waste" type="number"></td></tr>
+<tr><td></td><td colspan="2"><h5>Υγρά απόβλητα <br> (kBq)</h5></td><td><input id="liq_waste" type="number"></td></tr></table></td></tr>
+</table>
+<table>
+<tr>
+<td><input type="text" id="file_name" style="width:100px;"></td>
+<td><div style="right:60px;"><button id="save_btn" class="button" onclick="export2csv()"><i class="fas fa-save" style="font-size:15px"><!--<h4 style="font-weight:normal;"></h4>--></i>&nbsp;&nbsp;Αποθήκευση αρχείου</button></div></td>
+<td><div style="right:60px;"><button class="button" onclick="Print()"><!--<h4 style="font-weight:normal;"></h4>--><i class="fas fa-print"></i>&nbsp;&nbsp;Εκτύπωση</button></div></td>
+</tr>
+</table>
+<div id="print-container" class="row">
+<div class="column">
+<table style="width:120%;"  id="csv_table">
+<legend id="legend_center1"><div><h3><u>Συγκεντρωτικός Πίνακας</u><h3></div></legend>
+<tr><th><h4>Ημερομηνία</h4></th><th><h4>Kit</h4></th><th><h4>Κατασεκυαστής</h4></th><th><h4>#σωληναρίων</h4></th><th><h4>Στερεά απόβλητα<br>(kBq)</h4></th><th><h4>Υγρά απόβλητα<br>(kBq)</h4></th><th><h4>Στερεά+Υγρά<br>(kBq)</h4></th>
+</tr>
+</table>
+</div>
+<div class="column">
+<table  id="csv_table_Sums" >
+<tr>
+<legend id="legend_center2"><div><h3><u>Πίνακας αθροισμάτων ανά ημέρα</u><h3></div></legend>
+    <th><h4>Ημερομηνία</h4></th>
+    <th><h4>Άθροισμα Στερεών <br>αποβλήτων(kBq)</h4></th><th><h4>Άθροισμα Υγρών <br>αποβλήτων(kBq)</h4></th><th><h4>Συνολικά<br> απόβλητα(kBq)</h4></th>
+</tr>
+</table>
+</div>
+</div>
+</body>
