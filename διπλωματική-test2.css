@@ -13,7 +13,7 @@ body{
     font-size:small;
     padding: 0%;
     border-spacing: 0px;
-    
+    position:absolute;
 }
 table{
   font-family:cursive;
