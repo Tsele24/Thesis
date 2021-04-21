@@ -5,6 +5,7 @@
 <meta name="web application">
 <link rel="stylesheet" href="διπλωματική-test2.css">
 <script src="διπλωματική.js" ></script>
+<script src="change language.js" ></script>
 <script src="data_base.js" ></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -20,10 +21,10 @@
 <table>
 <tr>
 <td>
-<button type="submit" id="el"><img src="greece-flag-png-xl.png" alt="Submit"style="width:25px;height:20px;" ></button>
+<button type="submit" id="el" onclick="gr();"><img src="greece-flag-png-xl.png" alt="Submit"style="width:25px;height:20px;" ></button>
 </td>
 <td>
-<button type="submit" id="eng"><img src="england_PNG7.png" alt="Submit"style="width:25px;height:20px;" ></button>
+<button type="submit" id="eng" onclick="eng();"><img src="england_PNG7.png" alt="Submit"style="width:25px;height:20px;" ></button>
 </td>
 </tr>
 </table>
@@ -92,10 +93,10 @@
 </table>
 <div  style="padding-left:300px;"><h5>Οι υπολογισμοί να γίνουν με:</h5></div>
 <table>
-<!--<tr><td><div><h5><input type="checkbox">ονομαστική ενεργότητα του kit</h5></div></td><td><div><h5><input type="checkbox">μετρούμενες τιμές cpm του kit</h5></div></td><td><div style="padding-left:10px;padding-bottom:5px"><h5>Υπολογισμοί</h5></div></td></tr>-->
+
 <tr><td><fieldset class="groupbox-border" id="groupbox1">
-<legend class="groupbox-border"><h5><input type="checkbox" id="nominal" onchange="Checkbox1();">ονομαστική ενεργότητα του kit</h5></legend>
-<table class="Tables"><tr><td></td><td  colspan="2"><h5>Ονομ. ενργότητα <br>tracer (kBq)</h5></td><td><input id="tTracer" type="number"></td></tr>
+<legend class="groupbox-border"><h5><input type="checkbox"  id="nominal" onchange="Checkbox1();"><span class="checkbox">ονομαστική ενεργότητα του kit</span></h5></legend>
+<table class="Tables"><tr><td></td><td  colspan="2"><h5>Ονομ. ενεργότητα <br>tracer (kBq)</h5></td><td><input id="tTracer" type="number"></td></tr>
 <tr><td></td><td colspan="2"><h5>Συνολικός όγκος <br>tracer (ml)</h5></td><td><input id="tVolTracer" type="number"></td></tr>
 <tr><td></td><td colspan="2"><h5>Όγκος tracer ανά <br>σωληνάριο (ml)</h5></td><td><input id="VolPerTube" type="number"></td></tr>
 <tr><td></td><td colspan="2"><h5>Ενεργότητα ανά <br>σωληνάριο (kBq)</h5></td><td><input id="theoRadPerTube" type="number"></td></tr>
@@ -103,9 +104,9 @@
 </fieldset>
 </td>
 <td><fieldset class="groupbox-border" id="groupbox2">
-<legend class="groupbox-border"><h5><input type="checkbox" id="my_cpm" onchange="Checkbox2();" >μετρούμενες τιμές cpm του kit</h5></legend>
+<legend class="groupbox-border"><h5 ><input type="checkbox"  id="my_cpm" onchange="Checkbox2();" ><span class="checkbox">μετρούμενες τιμές cpm του kit</span></h5></legend>
  <table class="Tables" ><tr><td></td><td><h5>Τυπικές μετρ. κρούσεις <br>ανά σωληνάριο (cpm)</h5></td><td><input id="measCpmPerTube" type="number" onchange="Calc_kBq();"></td></tr>
-<tr><td></td><td><h5><input type="checkbox" id="myTotalBox" onchange="Calc_kBq();">Ίδιες μετρ.κρούσεις <br>ανά σωληνάριο (cpm)</h5></td><td><input id="myTotal" type="number" onkeyup="Calc_kBq();" ></td></tr>
+<tr><td></td><td><h5><input type="checkbox"  id="myTotalBox" onchange="Calc_kBq();"><span class="checkbox">Ίδιες μετρ.κρούσεις <br>ανά σωληνάριο (cpm)</span></h5></td><td><input id="myTotal" type="number" onkeyup="Calc_kBq();" ></td></tr>
 <tr ><td></td><td><h5>Μετρ. ενεργότητα  <br>ανά σωληνάριο (kBq)</h5></td><td><input id="measRadPerTube" type="number"></td></tr>
 <tr><td><h5>&nbsp;</h5></td></tr>
 <tr><td></td><td><h5 >Ευαισθησία <br> γ-counter (%)</h5></td><td><input id="efficiency" value="79.2335" type="number"></td></tr>
