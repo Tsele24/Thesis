@@ -324,7 +324,7 @@ rows/*[dates.length+1]*/.push(["Total Waste(kBq)","","","",Allsolidwastes.toFixe
         
      }
      
-     Row.insertCell(6).innerHTML="<button id=del class=delete style=font-weight:bold onclick=Delete(this) >delete</button>";
+     Row.insertCell(6).innerHTML="<button id=del onclick=Delete(this) ><img src=x-512.png style=width:20px;height:20px; > </button>";
      
   }
   Row=table1.insertRow(rows.length-1);
@@ -354,20 +354,7 @@ for(let i=0;i<4;i++){
     table2.rows[dates.length+1].insertCell(i).innerHTML=rows[dates.length+1][7+i];
 }
 
-if(document.getElementById("calc").innerHTML=="Υπολογισμός"){    //Κάνει αλλαγή γλώσσας 
-    let del=document.getElementsByClassName("delete");
-    console.log(del);
-    for(let i=0;i<rows.length-2;i++){
-        del[i].innerHTML="Διαγραφή";
-    }
-}
-else
-{
-    let del=document.getElementsByClassName("delete");
-    for(let i=0;i<rows.length-2;i++){
-        del[i].innerHTML="delete";
-    }
-}
+
 
 console.log(table1)
 console.log(rows)
@@ -544,13 +531,10 @@ function export2csv() {
             Row.insertCell(j).innerHTML=rows[i][j];
             
         }
-        if(document.getElementById("calc").innerHTML=="  Υπολογισμός"){
-            Row.insertCell(6).innerHTML="<button id=del class=delete onclick=Delete(this);>Διαγραφή</button>";
-        }
-        else{
-            Row.insertCell(6).innerHTML="<button id=del class=delete onclick=Delete(this);>delete</button>";
-        }
-       // Row.insertCell(6).innerHTML="<button id=del onclick=Delete(this);>delete</button>";
+        
+        Row.insertCell(6).innerHTML="<button id=del onclick=Delete(this) ><img src=x-512.png style=width:20px;height:20px; > </button>";//
+        
+        
      }
      Row=table1.insertRow(rows.length-1);
      for(let i=0;i<7;i++){
@@ -709,12 +693,9 @@ for(var i=0;i<dates.length;i++){
           Row.insertCell(j).innerHTML=rows[i][j];
          
       }
-      if(document.getElementById("calc").innerHTML=="Calculate"){
-      Row.insertCell(6).innerHTML="<button class=delete id=del onclick=Delete(this) >delete</button>";
-      }
-      else {
-        Row.insertCell(6).innerHTML="<button class=delete id=del onclick=Delete(this) >Διαγραφή</button>";
-      }
+     
+      Row.insertCell(6).innerHTML="<button id=del onclick=Delete(this) ><img src=x-512.png style=width:20px;height:20px; > </button>";
+     
    }
    Row=table1.insertRow(rows.length-1);
    for(let i=0;i<7;i++){

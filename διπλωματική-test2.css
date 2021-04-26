@@ -136,7 +136,7 @@ img{
  
   border: 1px solid rgb(151, 151, 151);
   position:relative;
-  left:150px;
+  left:20px;
   
 }
 
@@ -167,6 +167,7 @@ img{
   
   .column {
     flex: 50%;
+    position:relative;
   }
   .button {
     background-color: rgb(106, 175, 255); 
@@ -206,7 +207,6 @@ img{
 
     #el{
         background-color: rgb(106, 175, 255); 
-        border: none;
         padding: 5px;
         text-align: center;
         text-decoration: none;
@@ -218,7 +218,6 @@ img{
     }
     #eng{
         background-color: rgb(106, 175, 255); 
-        border: none;
         padding: 5px;
         text-align: center;
         text-decoration: none;
@@ -285,11 +284,17 @@ img{
     }
     #legend_center2{
       position: relative;
-      left:50px;
+      left:0px;
+      padding-left:0px;
+      padding-right:100px;
     }
     #groupbox2{
       height:269.9px;
     }
     #groypbox3{
       height:268.6px;
+    }
+
+    #del{
+      background-color: rgb(156, 213, 228);
     }
