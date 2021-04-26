@@ -330,7 +330,7 @@
                     document.getElementById("method").options[2].disabled=true;
                     document.getElementById("measCpmPerTube").value=62620;
                 }
-                else if(kataskeyasths=="DIAZORIN"){
+                else if(kataskeyasths=="DIASORIN"){
                     tubesperkit=200;
                     tTracer=300;
                     tVolTracer=110;

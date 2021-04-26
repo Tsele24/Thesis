@@ -297,4 +297,8 @@ img{
 
     #del{
       background-color: rgb(156, 213, 228);
+      margin-left:30px;
+    }
+    #date{
+      width:150px;
     }

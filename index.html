@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="web application">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="διπλωματική-test2.css">
 <script src="διπλωματική.js" ></script>
 <script src="change language.js" ></script>
@@ -36,7 +37,7 @@
 
 <tr> 
 <td colspan=><h5>Ημερομηνία</h5></td><td><input id="date" type="date"></td><td></td><td style="padding-left:50px;"><h5>Άνοιγμα και Ενημέρωση αρχείου :</h5></td>
-<td><input type="file" id="MyFile" style="display:none;" onchange="processFile()"><i class="fas fa-file-csv" style="font-size:22px;"></i>
+<td><input type="file" id="MyFile" style="display:none;" onchange="processFile()" accept=".csv"  ><i class="fas fa-file-csv" style="font-size:22px;"></i>
                 <label for="MyFile" class="file_label" id="loaded_file" >Άνοιγμα αρχείου</label></td>
 <td><img  src="logo-web page.png" style="margin-left:100px;"><td></td>
 </tr>
@@ -112,7 +113,7 @@
 <tr><td></td><td><h5><input type="checkbox"  id="myTotalBox" onchange="Calc_kBq();"><span class="checkbox">Ίδιες μετρ.κρούσεις <br>ανά σωληνάριο (cpm)</span></h5></td><td><input id="myTotal" type="number" onkeyup="Calc_kBq();" ></td></tr>
 <tr ><td></td><td><h5>Μετρ. ενεργότητα  <br>ανά σωληνάριο (kBq)</h5></td><td><input id="measRadPerTube" type="number"></td></tr>
 <tr><td><h5>&nbsp;</h5></td></tr>
-<tr><td></td><td><h5 >Ευαισθησία <br> γ-counter (%)</h5></td><td><input id="efficiency" value="79.2335" type="number"></td></tr>
+<tr><td></td><td><h5 >Ευαισθησία <br> γ-counter (%)</h5></td><td><input id="efficiency" value="79.2335" type="number" onkeyup="Calc_kBq();"></td></tr>
 </table>
 </fieldset>
 </td>

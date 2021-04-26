@@ -401,6 +401,7 @@ function Calc_kBq(){ //υπολογίζει την μετρούμενη ενερ
     console.log(document.getElementById("measRadPerTube").value);
     }
     else{
+    document.getElementById("measCpmPerTube").disabled=true;
     let Efficiency=document.getElementById("efficiency").value;
     let Total=document.getElementById("myTotal").value;
     let ActivityPerTube=Total/(600*Efficiency);
@@ -410,7 +411,11 @@ function Calc_kBq(){ //υπολογίζει την μετρούμενη ενερ
     document.getElementById("measRadPerTube").value=ActivityPerTube.toFixed(5);
     console.log(document.getElementById("measRadPerTube").value);
     }
+    if(document.getElementById("myTotalBox").checked==false){
+        document.getElementById("measCpmPerTube").disabled=false;
+    }
 }
+
 
 function EnMeasRadPerTube(){
     document.getElementById("measRadPerTube").disabled=false;
