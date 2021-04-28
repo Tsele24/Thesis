@@ -416,6 +416,14 @@ function Calc_kBq(){ //υπολογίζει την μετρούμενη ενερ
     }
 }
 
+function Calc_Cpm(){
+    let Efficiency=document.getElementById("efficiency").value;
+    let ActivityPerTube=document.getElementById("theoRadPerTube").value;
+    let CpmPerTubeNominal=ActivityPerTube*600*Efficiency;
+    document.getElementById("theoCpmPerTube").value=CpmPerTubeNominal.toFixed(2);
+
+}
+
 
 function EnMeasRadPerTube(){
     document.getElementById("measRadPerTube").disabled=false;
