@@ -765,9 +765,11 @@ function PercentageCorretion1(){//συμπληρώνει αυτόματα το �
  }
  function Clear_otherKit(){
      document.getElementById("ukit").value="";
+     document.getElementById("ukit").disabled=true;
  }
  function Clear_otherManu(){
      document.getElementById("umanu").value="";
+     document.getElementById("umanu").disabled=true;
  }
  function Print(){
      window.print()
