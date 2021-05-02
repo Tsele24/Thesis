@@ -11,7 +11,8 @@ var greek_words_h4=["Ημερομηνία","Kit","Κατασκευαστής","#
 "Υγρά απόβλητα<br>(kBq)","Στερεά+Υγρά<br>(kBq)","Ημερομηνία","Άθροισμα Στερεών<br> αποβλήτων(kBq)",
 "Άθροισμα Υγρών<br> αποβλήτων(kBq)","Συνολικά <br>απόβλητα(kBq)"];
 var greek_words_buttons=["Υπολογισμός","Αποθήκευση","Εκτύπωση"];
-var english_words_h5=["Date","Open and Update file :","Kit option","Manufucturer","RIA/IRMA","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#tubes"
+var english_words_h5=["&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date",
+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Open and Update file :","Kit option","Manufucturer","RIA/IRMA","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#tubes"
 ,"Calculate with:","nominal kit's activity","Nom. tracer<br> activity (kBq)","Total volume<br> tracer (kBq)",
 "Tracer volume<br> per tube (ml)","Activity per <br> tube (kBq)","Counts per<br> tube (cpm)","measured cpm kit's values","Standard measured counts<br> per tube (cpm)",
 "Your measured counts<br> per tube (cpm)","Meas. activity<br> per tube (kBq)","&nbsp;","Efficiency of<br> γ-counter (%)","Calculations",
@@ -56,6 +57,7 @@ function gr(){
     ButtoNs[i].innerHTML=greek_words_buttons[i];
   }
  document.getElementById("loaded_file").innerHTML="Άνοιγμα αρχείου";
+ document.getElementById("loaded_file").style="padding-left:15px;padding-right:15px;"
 }
 function eng(){
   let Labels1=document.getElementsByTagName("h5");
@@ -88,6 +90,7 @@ function eng(){
     Labels3[i].innerHTML=english_words_h4[i];
   }
   document.getElementById("loaded_file").innerHTML="Open file";
+  document.getElementById("loaded_file").style="padding-left:40px;padding-right:40px;"
   for(let i=0;i<3;i++){
     ButtoNs[i].innerHTML=english_words_buttons[i];
   }
