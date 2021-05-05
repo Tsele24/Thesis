@@ -1,5 +1,5 @@
 
-var greek_words_h5=["Ημερομηνία","Άνοιγμα και Ενημέρωση αρχείου :","Εξέταση","Κατασκευαστής","RIA/IRMA",
+var greek_words_h5=["Ημερομηνία","Άνοιγμα αρχείου :","Εξέταση","Κατασκευαστής","RIA/IRMA",
 "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#σωληναρίων","Οι υπολογισμοί να γίνουν με:","ονομαστική ενεργότητα του kit","Ονομ. ενεργότητα<br> tracer (kBq)",
 "Συνολικός όγκος<br> tracer (ml)","Όγκος tracer ανά<br> σωληνάριο (ml)",
 "Ενεργότητα ανά<br> σωληνάριο (kBq)","Κρούσεις ανά<br> σωληνάριο (cpm)","μετρούμενες τιμές cpm του kit","Τυπικές μετρ. κρούσεις <br>ανά σωληνάριο (cpm)"
@@ -12,7 +12,7 @@ var greek_words_h4=["Ημερομηνία","Kit","Κατασκευαστής","#
 "Άθροισμα Υγρών<br> αποβλήτων(kBq)","Συνολικά <br>απόβλητα(kBq)"];
 var greek_words_buttons=["Υπολογισμός","Αποθήκευση","Εκτύπωση"];
 var english_words_h5=["&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date",
-"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Open and Update file :","Kit option","Manufucturer","RIA/IRMA","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#tubes"
+"&nbsp;Open file :","Kit option","Manufucturer","RIA/IRMA","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#tubes"
 ,"Calculate with:","nominal kit's activity","Nom. tracer<br> activity (kBq)","Total volume<br> tracer (kBq)",
 "Tracer volume<br> per tube (ml)","Activity per <br> tube (kBq)","Counts per<br> tube (cpm)","measured cpm kit's values","Standard measured counts<br> per tube (cpm)",
 "Your measured counts<br> per tube (cpm)","Meas. activity<br> per tube (kBq)","&nbsp;","Efficiency of<br> γ-counter (%)","Calculations",

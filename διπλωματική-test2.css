@@ -298,7 +298,15 @@ img{
     #del{
       background-color: rgb(156, 213, 228);
       margin-left:30px;
+      cursor: pointer;
     }
     #date{
       width:150px;
+    }
+    #refresh{
+      background-color: rgb(106, 175, 255);
+      margin-left:30px;
+      border-radius: 50%;
+      border:none;
+      cursor: pointer;
     }

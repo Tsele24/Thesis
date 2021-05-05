@@ -43,6 +43,9 @@ function ClearSolidAndLiquidWaste(){
     document.getElementById("liq_waste").innerHTML="";
     document.getElementById("tubes").value=0;
 }
+function Refresh(){
+    location.reload();
+}
 
 function EnManu(){
     document.getElementById("manu").disabled=false;
@@ -113,6 +116,15 @@ function Checkbox2(){
 }
 
 function Calcs() {
+
+    if(document.getElementById("tubes").value==0){
+        alert("Γράψε έναν μη μηδενικό αριθμό σωληναρίων!");
+        return
+    }
+    if(document.getElementById("date").value==""){
+        alert("Επίλεξε μία ημερομηνία!");
+        return
+    }
     if(document.getElementById("nominal").checked==false && document.getElementById("my_cpm").checked==false){
         alert("Διάλεξε έναν από τους δύο τρόπους υπολογισμού!");
         return
@@ -429,7 +441,28 @@ function EnMeasRadPerTube(){
     document.getElementById("measRadPerTube").disabled=false;
 }
 
-function export2csv() {
+// function SaveAsCsv() {
+//     let data = "";
+//     var tableData = [];
+//     for (var row of rows) {
+//       var rowData = [];
+//       for (var column of row) {
+//         rowData.push(column);
+//       }
+//       tableData.push(rowData.join(","));
+//     }
+//     data += tableData.join("\n");
+//     var a = document.createElement("a");
+//     a.href = URL.createObjectURL(new Blob([data], { type: "text/csv" }));
+//     var filename="Το αρχείο μου".concat(".csv");
+//   a.setAttribute("download", filename);
+//     document.body.appendChild(a);
+//     a.click();
+//     document.body.removeChild(a);
+
+//   }
+
+  function SaveCsv(){
     let data = "";
     var tableData = [];
     for (var row of rows) {
@@ -442,28 +475,28 @@ function export2csv() {
     data += tableData.join("\n");
     var a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([data], { type: "text/csv" }));
-  var filename=document.getElementById("file_name").value.concat(".csv");
-    
-     if(filename==".csv"){
-      /* filename=document.getElementById("MyFile").value;
-       var filelength=filename.length;
-       filename=filename.substr(12,filelength);
-
-        console.log(filelength);*/
-     filename=document.getElementById("loaded_file").innerHTML;
-     }
-  a.setAttribute("download", filename);
+    if(document.getElementById("file_name").value==""){
+        var filename="Το αρχείο μου".concat(".csv");
+    }
+    else{
+        let LoadedFileName=document.getElementById("file_name").value;
+        var filename=LoadedFileName;
+    }
+    console.log(document.getElementById("file_name").value)
+    a.setAttribute("download", filename);
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
+   
   }
 
   function processFile(){
     var filename=document.getElementById("MyFile").value;
     var filelength=filename.length;
     filename=filename.substr(12,filelength);
-    document.getElementById("loaded_file").innerHTML=filename;
-    // document.getElementById("file_title").innerHTML=filename;
+    document.getElementById("file_name").value=filename;
+    // document.getElementById("loaded_file").innerHTML=filename;
+    console.log(filename);
     var file = document.getElementById("MyFile").files[0];
     var reader = new FileReader();
     reader.readAsText(file);

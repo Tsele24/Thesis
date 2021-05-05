@@ -28,7 +28,7 @@
 <button type="submit" id="eng" onclick="eng();"><img src="england_PNG7.png" style="width:25px;height:20px;" ></button>
 </td>
 <td>
-<!--<button id="del" ><img src="x-512.png" style="width:20px;height:20px;" > </button>-->
+<button id="refresh" onclick="Refresh()"><img src="refresh-icon.png" style="width:35px;height:35px;background-color:rgb(106, 175, 255);border-radius:50%;"> </button>
 </td>
 </tr>
 </table>
@@ -36,15 +36,15 @@
 <table id="intables" >
 
 <tr> 
-<td colspan=><h5>Ημερομηνία</h5></td><td><input id="date" type="date"></td><td></td><td style="padding-left:50px;"><h5>Άνοιγμα και Ενημέρωση αρχείου :</h5></td>
-<td><input type="file" id="MyFile" style="display:none;" onchange="processFile()" accept=".csv"  ><i class="fas fa-file-csv" style="font-size:22px;"></i>
+<td colspan=><h5>Ημερομηνία</h5></td><td><input id="date" type="date"></td><td></td><td style="padding-left:50px;"><h5>Άνοιγμα αρχείου :</h5></td>
+<td><input type="file" id="MyFile" style="display:none;" onchange="processFile()" accept=".csv"  ></i>
                 <label for="MyFile" class="file_label" id="loaded_file" >Άνοιγμα αρχείου</label></td>
 <td><img  src="logo-web page.png" style="margin-left:100px;"><td></td>
 </tr>
 </table>
 <table id="intables-2">
 <tr>
-<td><h5>Εξέταση</h5></td><td><select name="Sel kit" id="kit" style="width: 60%" class="select" onchange="ClearSolidAndLiquidWaste();Clear_otherKit();Dis();St_values();Calc_kBq();" >
+<td><h5>Εξέταση</h5></td><td><select name="Sel kit" id="kit" style="width: 60%" class="select" onchange="ClearSolidAndLiquidWaste();Clear_otherKit();ResetValues();Dis();St_values();Calc_kBq();" >
                     <option value="" selected disabled hidden>-</option>
                     <option value="FT3">FT3</option>
                     <option value="FT4">FT4</option>
@@ -86,8 +86,8 @@
                     <option value="Other">Other</option>
                    </select>
                    <input type="text" style="width: 65%" id="umanu" disabled></td>
-<td><h5>RIA/IRMA</h5></td><td><select type="name" style="width: 100px" id="method" class="select" >
-                <option value="none" selected disabled hidden>-</option>
+<td><h5>RIA/IRMA</h5></td><td><select type="name" style="width: 100px" id="method" class="select" onchange="St_values();" >
+                <option value="" selected disabled hidden>-</option>
                 <option value="RIA">RIA</option>
                 <option value="IRMA">IRMA</option>
                  </select></td>
@@ -121,15 +121,16 @@
 <legend class="groupbox-border"><h5>Υπολογισμοί</h5></legend>
 <table class="Tables" ><tr><td></td><td colspan="2"><h5>Ποσοστό <br> στερεών (%)</h5></td><td><input id="perSol" type="number" onkeyup="PercentageCorretion1()"></td></tr>
 <tr><td></td><td colspan="2"><h5>Ποσοστό <br> υγρών (%)</h5></td><td><input id="perLiq" type="number" onkeyup="PercentageCorretion2()"></td></tr>
-<tr><td colspan="2"><div class="calc"><button id="calc" class="button"  onclick="Calcs();"><i class='fas fa-radiation-alt' style='font-size:15px;'></i>&nbsp;&nbsp;Υπολογισμός</button></div></td></tr>
+<tr><td colspan="2"><div class="calc"><button id="calc" class="button"  onclick="Calcs();">Υπολογισμός</button></div></td></tr>
 <tr><td></td><td colspan="2"><h5>Στερεά απόβλητα <br>(kBq)</h5></td><td><input id="sol_waste" type="number"></td></tr>
 <tr><td></td><td colspan="2"><h5>Υγρά απόβλητα <br> (kBq)</h5></td><td><input id="liq_waste" type="number"></td></tr></table></td></tr>
 </table>
 <table>
 <tr>
 <td><input type="text" id="file_name" style="width:100px;"></td>
-<td><div style="right:60px;"><button id="save_btn" class="button" onclick="export2csv()"><i class="fas fa-save" style="font-size:15px"><!--<h4 style="font-weight:normal;"></h4>--></i>&nbsp;&nbsp;Αποθήκευση αρχείου</button></div></td>
-<td><div style="right:60px;"><button class="button" onclick="Print()"><!--<h4 style="font-weight:normal;"></h4>--><i class="fas fa-print"></i>&nbsp;&nbsp;Εκτύπωση</button></div></td>
+<td><div style="right:60px;"><button id="save_btn" class="button" onclick="SaveCsv()">Αποθήκευση </button></div></td>
+<!--<td><div style="right:60px;"><button id="save_btn" class="button" onclick="SaveCsv()">Αποθήκευση ως</button></div></td>-->
+<td><div style="right:60px;"><button class="button" onclick="Print()">Εκτύπωση</button></div></td>
 </tr>
 </table>
 <div id="print-container" class="row">
