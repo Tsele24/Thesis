@@ -411,6 +411,7 @@ function Calc_kBq(){ //υπολογίζει την μετρούμενη ενερ
     
     document.getElementById("measRadPerTube").value=ActivityPerTube.toFixed(5);
     console.log(document.getElementById("measRadPerTube").value);
+    console.log(MyCpm)
     }
     else{
     document.getElementById("measCpmPerTube").disabled=true;
