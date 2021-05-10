@@ -12,30 +12,19 @@ var rows = [[]];
     rows[0][8]="Sum Solid Waste (kBq)";
     rows[0][9]="Sum Liquid Waste (kBq)";
     rows[0][10]="Total Waste (kBq)";
-    var dates=[];
-    var Swaste=[];
-    var Lwaste=[];
-    var SwasteSum=[];
-    var LwasteSum=[];
-   // var SS=[];
-    //var SL=[];
-    var Total_waste=[];
-    var table1;
-    var a=0              //a= μεταβλητή που κρατάει τον δείκτη της τελευταίας άθροισης
-    var b=0;
-    var x=1;
-    var y=1;
-    var n=1;
-    var k=1;
-    var numberofrowsProcessedfile=0; // ο αριθμός των γραμμών πριν την προσθήκη καινούργιας καταχώρησης
-    var alldates=[];
-    var alldatessort=[]
-    var c=0;   
-    var e=1;       // 
-var RoWs = [[[]]]
-var Roows=[]
-var SS=[[]]
-var SL=[[]]
+var dates=[];
+var Swaste=[];
+var Lwaste=[];
+var SwasteSum=[];
+var LwasteSum=[];
+var Total_waste=[];
+var alldates=[];
+var alldatessort=[]
+var Sum_When_delete=0;
+var RoWs = [[[]]];
+var Roows=[];
+var SS=[[]];
+var SL=[[]];
 
 
 function ClearSolidAndLiquidWaste(){
@@ -60,29 +49,6 @@ function EnManu(){
     
 }
 
-function EnKit(){
-    document.getElementById("kit").disabled=false;
-}
-// function En_uManu(){
-//     if(document.getElementById("manu").value=="Other"){
-//         document.getElementById("umanu").disabled=false;
-//     }
-// }
-function EnMethod(){
-    document.getElementById("method").disabled=false;
-    if(document.getElementById("manu").value=="Other"){
-        document.getElementById("umanu").disabled=false;
-    }
-    else
-    {
-        document.getElementById("umanu").disabled=true;
-    }
-}
-
-function EnTubes(){
-    
-    document.getElementById("tubes").disabled=false;
-}
 
 function Checkbox1(){
     if(document.getElementById("nominal").checked==true){
@@ -233,13 +199,8 @@ function Calcs() {
         alldates[i-1]=rows[i][0]
     }
     console.log(alldates)
-    // for(var i=0;i<alldates.length;i++){
-    //     dates=alldates
-    // }
+   
     dates=alldates.filter((v, i, a) => a.indexOf(v) === i);   //αφαίρεση των όμοιων τιμών
-    // dates=alldates.filter((date, i, self) => 
-    // self.findIndex(d => d.getTime() === date.getTime()) === i
-    // )
     console.log(alldates)
     console.log(dates)
     
@@ -247,7 +208,6 @@ for(var i=0;i<dates.length;i++){
   Roows[i] = RoWs.filter(function(x){
       return x[0]==dates[i];
   }) }
- // Roows.push([]);//
   console.log(Roows)
   console.log(Roows[0][0])
   console.log(Roows[0])
@@ -296,14 +256,12 @@ AllLiquidwastes=RoWs.map(d => parseFloat(d[5]))// επιλέγω από έναν
  Allsolidwastes=parseFloat(Allsolidwastes);
  AllLiquidwastes=parseFloat(AllLiquidwastes);
  AllWastes=Allsolidwastes+AllLiquidwastes;
-rows/*[dates.length+1]*/.push(["Total Waste(kBq)","","","",Allsolidwastes.toFixed(2).toString(),AllLiquidwastes.toFixed(2).toString(),AllWastes.toFixed(2).toString()])
+rows.push(["Total Waste(kBq)","","","",Allsolidwastes.toFixed(2).toString(),AllLiquidwastes.toFixed(2).toString(),AllWastes.toFixed(2).toString()])
  console.log(rows)
  console.log(dates);
  let overall=rows[rows.length-1].slice(4,7);
  overall.unshift("Total Waste(kBq)");
-//  if(rows.length>3){
-//     overall.unshift("");
-//  }
+
  let last_row=rows[dates.length+1].concat(overall);
  rows[dates.length+1]=last_row;
  console.log(rows);
@@ -372,15 +330,6 @@ console.log(table1)
 console.log(rows)
 console.log(document.getElementById("calc").innerHTML);
 }
-
-
-
-
-  
-  
-
-
-
 
 function numbersOnly(input){
     var regex=/[^0-9] /gi;
@@ -496,7 +445,6 @@ function EnMeasRadPerTube(){
     var filelength=filename.length;
     filename=filename.substr(12,filelength);
     document.getElementById("file_name").value=filename;
-    // document.getElementById("loaded_file").innerHTML=filename;
     console.log(filename);
     var file = document.getElementById("MyFile").files[0];
     var reader = new FileReader();
@@ -519,13 +467,7 @@ function EnMeasRadPerTube(){
       for(var i=0;i<notreadyrows.length;i++){
       readyrows[i]=notreadyrows[i].split(",");
       }
-    //   for(var i=1;i<rows.length;i++){
-    //     console.log(rows[1][0])
-    //     alldates.push(rows[i][0]);
-
-    // }
-      
-     //console.log(readyrows);
+   
      rows=readyrows;
      if(rows[rows.length-1]==""){
         rows.pop()
@@ -542,7 +484,6 @@ function EnMeasRadPerTube(){
      sortByDate(rows);
      console.log("sorted loaded rows ",rows)
      for(var i=1;i<rows.length-1;i++){
-        // console.log(rows[1][0])
          alldates.push(rows[i][0]);
 
      }
@@ -561,7 +502,7 @@ function EnMeasRadPerTube(){
          rows[i][8]=kl[i];
          rows[i][9]=bn[i];
          rows[i][10]=bm[i];
-     }                                                      // //
+     }                                                      
      console.log(rows);
     var table1=document.getElementById("csv_table");
  if(table1.rows.length>1){
@@ -656,13 +597,7 @@ function Delete(y){
         alldates[i-1]=rows[i][0]
     }
     console.log(alldates)
-    // for(var i=0;i<alldates.length;i++){
-    //     dates=alldates
-    // }
     dates=alldates.filter((v, i, a) => a.indexOf(v) === i);   //αφαίρεση των όμοιων τιμών
-    // dates=alldates.filter((date, i, self) => 
-    // self.findIndex(d => d.getTime() === date.getTime()) === i
-    // )
     console.log(alldates)
     console.log(dates)
     
@@ -670,10 +605,7 @@ for(var i=0;i<dates.length;i++){
   Roows[i] = RoWs.filter(function(x){
       return x[0]==dates[i];
   }) }
- // Roows.push([]);//
   console.log(Roows)
-//   console.log(Roows[0][0])
-//   console.log(Roows[0])
  SS=[[]]
  SS.push([])
  SL=[[]]
@@ -699,8 +631,8 @@ for(var i=0;i<dates.length;i++){
      rows[i+1].push(dates[i])
      rows[i+1].push(SS[i].reduce((a,b)=>a+b,0).toFixed(2).toString())
      rows[i+1].push(SL[i].reduce((a,b)=>a+b,0).toFixed(2).toString())
-     c=SS[i].reduce((a,b)=>a+b,0)+SL[i].reduce((a,b)=>a+b,0)
-     rows[i+1].push(c.toFixed(2).toString())
+     Sum_When_delete=SS[i].reduce((a,b)=>a+b,0)+SL[i].reduce((a,b)=>a+b,0)
+     rows[i+1].push(Sum_When_delete.toFixed(2).toString())
      
  }
  rows.pop();
