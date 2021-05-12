@@ -236,8 +236,8 @@ for(var i=0;i<dates.length;i++){
      rows[i+1].push(dates[i])
      rows[i+1].push(SS[i].reduce((a,b)=>a+b,0).toFixed(2).toString())
      rows[i+1].push(SL[i].reduce((a,b)=>a+b,0).toFixed(2).toString())
-     c=SS[i].reduce((a,b)=>a+b,0)+SL[i].reduce((a,b)=>a+b,0)
-     rows[i+1].push(c.toFixed(2).toString())
+     Sum_When_delete=SS[i].reduce((a,b)=>a+b,0)+SL[i].reduce((a,b)=>a+b,0)
+     rows[i+1].push(Sum_When_delete.toFixed(2).toString())
      
  }
  
