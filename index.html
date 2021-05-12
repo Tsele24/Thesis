@@ -37,7 +37,7 @@
 
 <tr> 
 <td colspan=><h5>Ημερομηνία</h5></td><td><input id="date" type="date"></td><td></td><td style="padding-left:50px;"><h5>Άνοιγμα αρχείου :</h5></td>
-<td><input type="file" id="MyFile" style="display:none;" onchange="processFile()" accept=".csv"  ></i>
+<td><input type="file" id="MyFile" style="display:none;" onclick="UploadFileAlert()" onchange="processFile()" accept=".csv"  ></i>
                 <label for="MyFile" class="file_label" id="loaded_file" >Άνοιγμα αρχείου</label></td>
 <td><img  src="logo-web page.png" style="margin-left:100px;"><td></td>
 </tr>
@@ -71,7 +71,7 @@
                       </select>
                       <input type="text" style="width: 57%" id="ukit" disabled></td>
 <td><h5>Κατασκευαστής</h5></td>
-<td> <select  name="Manurer" id="manu" class="select" style="width: 65%" onclick="EnTubes()" onchange="Clear_otherManu();St_values();Calc_kBq();">
+<td> <select  name="Manurer" id="manu" class="select" style="width: 65%" onchange="Clear_otherManu();St_values();Calc_kBq();">
                     <option value="" selected disabled hidden>-</option>
                     <option value="BECKMAN">BECKMAN COULTER</option>
                     <option value="BRAHMS">BRAHMS</option>

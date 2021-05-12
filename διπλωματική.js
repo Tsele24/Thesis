@@ -391,26 +391,6 @@ function EnMeasRadPerTube(){
     document.getElementById("measRadPerTube").disabled=false;
 }
 
-// function SaveAsCsv() {
-//     let data = "";
-//     var tableData = [];
-//     for (var row of rows) {
-//       var rowData = [];
-//       for (var column of row) {
-//         rowData.push(column);
-//       }
-//       tableData.push(rowData.join(","));
-//     }
-//     data += tableData.join("\n");
-//     var a = document.createElement("a");
-//     a.href = URL.createObjectURL(new Blob([data], { type: "text/csv" }));
-//     var filename="Το αρχείο μου".concat(".csv");
-//   a.setAttribute("download", filename);
-//     document.body.appendChild(a);
-//     a.click();
-//     document.body.removeChild(a);
-
-//   }
 
   function SaveCsv(){
     let data = "";
@@ -439,8 +419,15 @@ function EnMeasRadPerTube(){
     document.body.removeChild(a);
    
   }
+function UploadFileAlert(){
+    if(rows.length>1){
+        console.log(rows.length)
+        alert("Προσοχή! Όποια καταχώρηση έχει γίνει θα διαγραφθεί, αν δεν θέλετε να διαγραφθεί πατήστε το άκυρο.");
 
+    }
+}
   function processFile(){
+    
     var filename=document.getElementById("MyFile").value;
     var filelength=filename.length;
     filename=filename.substr(12,filelength);
@@ -449,9 +436,7 @@ function EnMeasRadPerTube(){
     var file = document.getElementById("MyFile").files[0];
     var reader = new FileReader();
     reader.readAsText(file);
-  
-    //if you need to read a csv file with a 'ISO-8859-1' encoding
-    /*reader.readAsText(file,'ISO-8859-1');*/
+    
   
     //When the file finish load
     reader.onload = function(event) {
@@ -482,6 +467,7 @@ function EnMeasRadPerTube(){
         rows.sort(sorter);
      };
      sortByDate(rows);
+     alldates=[];
      console.log("sorted loaded rows ",rows)
      for(var i=1;i<rows.length-1;i++){
          alldates.push(rows[i][0]);
@@ -535,11 +521,13 @@ if(table2.rows.length>1){
        table2.deleteRow(1);
      }
 }
-for(var i=0;i<dates.length;i++){
+console.log(dates);
+for(var i=0;i<dates.length;i++){//
     var Rrow=table2.insertRow(i+1)
     let Cells=Rrow.insertCell(0);
      Cells.innerHTML=dates[i];
     }
+    console.log(Rrow)
 console.log(table2.rows[0])
 for(var i=0;i<dates.length;i++){
    for(var j=0;j<3;j++){

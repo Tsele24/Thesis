@@ -66,7 +66,7 @@ function Dis(){
             for(let i=1;i<11;i++){
                 document.getElementById("manu").options[i].style="color: black;font-weight:normal"  
             }
-            document.getElementById("manu").options[4].style="color: rgb(53,96,145);font-weight:bold;";
+            document.getElementById("manu").options[5].style="color: rgb(53,96,145);font-weight:bold;";
             document.getElementById("manu").options[7].style="color: rgb(53,96,145);font-weight:bold;";
             document.getElementById("manu").options[10].style="color: rgb(53,96,145);font-weight:bold;";
            
@@ -215,9 +215,9 @@ function Dis(){
        switch (Kit){
             case "FT3":
                kataskeyasths=document.getElementById("manu").value;
-            //    document.getElementById("method").value="RIA";
                var e=document.getElementById("efficiency").value;
-               if(kataskeyasths=="BECKMAN" && document.getElementById("method").value=="RIA" ){
+               if(kataskeyasths=="BECKMAN"){
+                document.getElementById("method").value="RIA";
                 tTracer=225;
                 tVolTracer=45;
                 VolPerTube=0.4;
@@ -227,8 +227,8 @@ function Dis(){
                 perLiq=100-perSol;
                 document.getElementById("measCpmPerTube").value=22573;
                }
-               else if(kataskeyasths=="IZOTOP" && document.getElementById("method").value=="RIA"){
-
+               else if(kataskeyasths=="IZOTOP"){
+                document.getElementById("method").value=="RIA";
                 tTracer=300;
                 tVolTracer=55;
                 VolPerTube=0.5;
@@ -248,15 +248,15 @@ function Dis(){
                 VolPerTube=0;
                 perSol=0;
                 document.getElementById("measCpmPerTube").value=0;
+                document.getElementById("method").value="";
             }
                                      
             break;
             case "FT4":
                  kataskeyasths=document.getElementById("manu").value;
-                // document.getElementById("method").value="RIA";
                 var e=document.getElementById("efficiency").value;
-                if(kataskeyasths=="BECKMAN" && document.getElementById("method").value=="RIA"){
-                    
+                if(kataskeyasths=="BECKMAN"){
+                    document.getElementById("method").value="RIA";
                     tTracer=310;
                     tVolTracer=45;
                     VolPerTube=0.4;
@@ -267,8 +267,8 @@ function Dis(){
 
                     document.getElementById("measCpmPerTube").value=37957;
                 }
-                else if(kataskeyasths=="IZOTOP" && document.getElementById("method").value=="RIA"){
-                    
+                else if(kataskeyasths=="IZOTOP" ){
+                    document.getElementById("method").value=="RIA";
                     tTracer=260;
                     tVolTracer=55;
                     VolPerTube=0.5;
@@ -279,8 +279,8 @@ function Dis(){
 
                     document.getElementById("measCpmPerTube").value=62620;
                 }
-                else if(kataskeyasths=="DIASORIN" && document.getElementById("method").value=="RIA"){
-                    
+                else if(kataskeyasths=="DIASORIN"  ){
+                    document.getElementById("method").value=="RIA";
                     tTracer=300;
                     tVolTracer=110;
                     VolPerTube=0.5;
@@ -302,16 +302,16 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("method").value="";
                 }
            
             
             break;
             case "TSH":
                  kataskeyasths=document.getElementById("manu").value;
-                // document.getElementById("method").value="IRMA";
                 var e=document.getElementById("efficiency").value;
                 if(kataskeyasths=="BECKMAN"){
-                   
+                    document.getElementById("method").value="IRMA";
                     tTracer=515;
                     tVolTracer=11;
                     VolPerTube=0.1;
@@ -322,8 +322,8 @@ function Dis(){
                     
                     document.getElementById("measCpmPerTube").value=68327;
                 }
-                else if(kataskeyasths=="DIASOURCE" && document.getElementById("method").value=="IRMA"){
-                    
+                else if(kataskeyasths=="DIASOURCE"  ){
+                    document.getElementById("method").value=="IRMA";
                     tTracer=700;
                     tVolTracer=5.5;
                     VolPerTube=0.05;
@@ -334,8 +334,8 @@ function Dis(){
                     
                     document.getElementById("measCpmPerTube").value=207836;
                 }
-                else if(kataskeyasths=="DIASORIN" && document.getElementById("method").value=="IRMA"){
-                    
+                else if(kataskeyasths=="DIASORIN"  ){
+                    document.getElementById("method").value=="IRMA";
                     tTracer=1200;
                     tVolTracer=42;
                     VolPerTube=0.2;
@@ -357,15 +357,15 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("method").value="";
                 }
                 
             break;
             case "TgAb":
                  kataskeyasths=document.getElementById("manu").value;
-                // document.getElementById("method").value="RIA";
                 var e=document.getElementById("efficiency").value;
-                if(kataskeyasths=="BRAHMS" && document.getElementById("method").value=="RIA"){
-                    
+                if(kataskeyasths=="BRAHMS"){
+                    document.getElementById("method").value="RIA";
                     tTracer=142;
                     tVolTracer=22;
                     VolPerTube=0.2;
@@ -376,8 +376,8 @@ function Dis(){
 
                     document.getElementById("measCpmPerTube").value=28686;
                 }
-                else if(kataskeyasths=="ZENTECH" && document.getElementById("method").value=="RIA"){
-                    
+                else if(kataskeyasths=="ZENTECH" ){
+                    document.getElementById("method").value=="RIA";
                     tTracer=137;
                     tVolTracer=22;
                     VolPerTube=0.2;
@@ -388,8 +388,8 @@ function Dis(){
 
                     document.getElementById("measCpmPerTube").value=33760;
                 }
-                else if(kataskeyasths=="LAB SUPPLIES" && document.getElementById("method").value=="RIA"){
-                    
+                else if(kataskeyasths=="LAB SUPPLIES"  ){
+                    document.getElementById("method").value=="RIA";
                     tTracer=260;
                     tVolTracer=11;
                     VolPerTube=0.1;
@@ -411,15 +411,15 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("method").value="";
                 }
                 
             break;
             case "TPO":
                  kataskeyasths=document.getElementById("manu").value;
-                // document.getElementById("method").value="RIA";
                 var e=document.getElementById("efficiency").value;
-                if(kataskeyasths=="IZOTOP" && document.getElementById("method").value=="RIA"){
-                    
+                if(kataskeyasths=="IZOTOP" ){
+                    document.getElementById("method").value="RIA";
                     tTracer=260;
                     tVolTracer=11;
                     VolPerTube=0.1;
@@ -430,8 +430,8 @@ function Dis(){
 
                     document.getElementById("measCpmPerTube").value=48361;
                 }
-                else if(kataskeyasths=="ZENTECH" && document.getElementById("method").value=="RIA"){
-                    
+                else if(kataskeyasths=="ZENTECH"  ){
+                    document.getElementById("method").value=="RIA";
                     tTracer=114;
                     tVolTracer=22;
                     VolPerTube=0.2;
@@ -442,8 +442,8 @@ function Dis(){
 
                     document.getElementById("measCpmPerTube").value=26388;
                 }
-                else if(kataskeyasths=="LAB SUPPLIES" && document.getElementById("method").value=="RIA"){
-                    
+                else if(kataskeyasths=="LAB SUPPLIES"  ){
+                    document.getElementById("method").value=="RIA";
                     tTracer=260;
                     tVolTracer=11;
                     VolPerTube=0.1;
@@ -466,18 +466,15 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("method").value="";
                 }
             break;
             case "rTSH-Ab":
                 
                  kataskeyasths=document.getElementById("manu").value;
-                // document.getElementById("method").value="RIA";
                 var e=document.getElementById("efficiency").value;
-                if(kataskeyasths=="BRAHMS" && document.getElementById("method").value=="RIA"){
-                    document.getElementById("manu").value="BRAHMS";
+                if(kataskeyasths=="BRAHMS" ){
                     document.getElementById("method").value="RIA";   
-                    var e=document.getElementById("efficiency").value;   
-                    
                     tTracer=80;
                     tVolTracer=11;
                     VolPerTube=0.1;
@@ -499,14 +496,14 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("method").value="";
                 }
             break;
             case "Tg":
                  kataskeyasths=document.getElementById("manu").value;
-                // document.getElementById("method").value="IRMA";
                 var e=document.getElementById("efficiency").value;
-                if(kataskeyasths=="IZOTOP" && document.getElementById("method").value=="IRMA"){
-                    
+                if(kataskeyasths=="IZOTOP"){
+                    document.getElementById("method").value="IRMA";
                     tTracer=980;
                     tVolTracer=21;
                     VolPerTube=0.2;
@@ -517,8 +514,8 @@ function Dis(){
                     
                     document.getElementById("measCpmPerTube").value=162174;
                 }
-                else if(kataskeyasths=="ZENTECH" && document.getElementById("method").value=="IRMA"){
-                    
+                else if(kataskeyasths=="ZENTECH" ){
+                    document.getElementById("method").value=="IRMA";
                     tTracer=480;
                     tVolTracer=27.5;
                     VolPerTube=0.25;
@@ -529,8 +526,8 @@ function Dis(){
                     
                     document.getElementById("measCpmPerTube").value=126653;
                 }
-                else if(kataskeyasths=="ZENTECH" && document.getElementById("method").value=="IRMA"){
-                    
+                else if(kataskeyasths=="DIASORIN" ){
+                    document.getElementById("method").value=="IRMA"
                     tTracer=867;
                     tVolTracer=27;
                     VolPerTube=0.25;
@@ -552,14 +549,14 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("method").value="";
                 }
             break;
             case "CEA":
                  kataskeyasths=document.getElementById("manu").value;
-                // document.getElementById("method").value="IRMA";
                 var e=document.getElementById("efficiency").value;
-                if(kataskeyasths=="DIASOURCE" && document.getElementById("method").value=="IRMA"){
-                    
+                if(kataskeyasths=="DIASOURCE"){
+                    document.getElementById("method").value="IRMA";
                     tTracer=310;
                     tVolTracer=11;
                     VolPerTube=0.1;
@@ -570,8 +567,8 @@ function Dis(){
                     
                     document.getElementById("measCpmPerTube").value=113234;
                 }
-                else if(kataskeyasths=="BECKMAN" && document.getElementById("method").value=="IRMA"){
-                    
+                else if(kataskeyasths=="BECKMAN"){
+                    document.getElementById("method").value=="IRMA";
                     tTracer=640;
                     tVolTracer=33;
                     VolPerTube=0.3;
@@ -595,14 +592,14 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("method").value="";
                 }
             break;
             case "CA 19-9":
                  kataskeyasths=document.getElementById("manu").value;
-                // document.getElementById("method").value="IRMA";
                 var e=document.getElementById("efficiency").value;
-                if(kataskeyasths=="IZOTOP" && document.getElementById("method").value=="IRMA"){
-                    
+                if(kataskeyasths=="IZOTOP"){
+                    document.getElementById("method").value="IRMA";
                     tTracer=980;
                     tVolTracer=21;
                     VolPerTube=0.2;
@@ -614,8 +611,8 @@ function Dis(){
                     document.getElementById("measCpmPerTube").value=225347;
                 }
                 
-                else if(kataskeyasths=="BECKMAN" && document.getElementById("method").value=="IRMA"){
-                    
+                else if(kataskeyasths=="BECKMAN"  ){
+                    document.getElementById("method").value=="IRMA";
                     tTracer=310;
                     tVolTracer=11;
                     VolPerTube=0.1;
@@ -637,14 +634,14 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("method").value="";
                 }
             break;
             case "AchRAb":
                  kataskeyasths=document.getElementById("manu").value;
-                // document.getElementById("method").value="IRMA";
                 var e=document.getElementById("efficiency").value;
-                if(kataskeyasths=="IBL" && document.getElementById("method").value=="IRMA"){
-                    
+                if(kataskeyasths=="IBL"){
+                    document.getElementById("method").value="IRMA";
                     tTracer=300;
                     tVolTracer=10.8;
                     VolPerTube=0.1;
@@ -655,8 +652,8 @@ function Dis(){
                     
                     document.getElementById("measCpmPerTube").value=45631;
                 }
-                else if(kataskeyasths=="DIASOURCE" && document.getElementById("method").value=="IRMA"){
-                    
+                else if(kataskeyasths=="DIASOURCE"){
+                    document.getElementById("method").value=="IRMA";
                     tTracer=300;
                     tVolTracer=10.8;
                     VolPerTube=0.1;
@@ -678,15 +675,14 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("method").value="";
                 }
              break;
             case "CA 125":
                  kataskeyasths=document.getElementById("manu").value;
-                // document.getElementById("method").value="IRMA";
                 var e=document.getElementById("efficiency").value;
-                if(kataskeyasths=="IZOTOP" && document.getElementById("method").value=="IRMA"){
-                    
-                    
+                if(kataskeyasths=="IZOTOP"){
+                    document.getElementById("method").value="IRMA";
                     tTracer=980;
                     tVolTracer=11;
                     VolPerTube=0.1;
@@ -697,8 +693,8 @@ function Dis(){
                     
                     document.getElementById("measCpmPerTube").value=238846;
                 }
-                if(kataskeyasths=="BECKMAN" && document.getElementById("method").value=="IRMA"){
-                    
+                if(kataskeyasths=="BECKMAN"){
+                    document.getElementById("method").value=="IRMA";
                     tTracer=480;
                     tVolTracer=33;
                     VolPerTube=0.3;
@@ -721,15 +717,15 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("method").value="";
                 }
             break;
             case "CA 15-3":
                  kataskeyasths=document.getElementById("manu").value;
-                // document.getElementById("method").value="IRMA";
                 var e=document.getElementById("efficiency").value;
 
-                if(kataskeyasths=="BECKMAN" && document.getElementById("method").value=="IRMA"){
-                    
+                if(kataskeyasths=="BECKMAN" ){
+                    document.getElementById("method").value="IRMA";
                     tTracer=600;
                     tVolTracer=22;
                     VolPerTube=0.2;
@@ -740,8 +736,8 @@ function Dis(){
                     
                     document.getElementById("measCpmPerTube").value=130549;
                 }
-                else if(kataskeyasths=="IZOTOP" && document.getElementById("method").value=="IRMA"){
-                    
+                else if(kataskeyasths=="IZOTOP"  ){
+                    document.getElementById("method").value=="IRMA";
                     tTracer=980;
                     tVolTracer=21;
                     VolPerTube=0.2;
@@ -763,14 +759,14 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("method").value="";
                 }
             break;
             case "AFP":
                  kataskeyasths=document.getElementById("manu").value;
-                // document.getElementById("method").value="IRMA";
                 var e=document.getElementById("efficiency").value;
-                if(kataskeyasths=="IZOTOP" && document.getElementById("method").value=="IRMA"){
-                    
+                if(kataskeyasths=="IZOTOP"){
+                    document.getElementById("method").value="IRMA";
                     tTracer=740;
                     tVolTracer=21;
                     VolPerTube=0.2;
@@ -781,8 +777,8 @@ function Dis(){
                     
                     document.getElementById("measCpmPerTube").value=125641;
                 }
-                else if(mkataskeyasths=="BECKMAN" && document.getElementById("method").value=="IRMA"){
-                    
+                else if(mkataskeyasths=="BECKMAN" ){
+                    document.getElementById("method").value=="IRMA";
                     tTracer=320;
                     tVolTracer=22;
                     VolPerTube=0.2;
@@ -808,10 +804,9 @@ function Dis(){
              break;
             case "TPSA":
                  kataskeyasths=document.getElementById("manu").value;
-                // document.getElementById("method").value="IRMA";
                 var e=document.getElementById("efficiency").value;
-                if(kataskeyasths=="IZOTOP" && document.getElementById("method").value=="IRMA"){
-                    
+                if(kataskeyasths=="IZOTOP"){
+                    document.getElementById("method").value="IRMA";
                     tTracer=980;
                     tVolTracer=11;
                     VolPerTube=0.1;
@@ -822,8 +817,8 @@ function Dis(){
                     
                     document.getElementById("measCpmPerTube").value=178269;
                 }
-                else if(kataskeyasths=="BECKMAN" && document.getElementById("method").value=="IRMA"){
-                    
+                else if(kataskeyasths=="BECKMAN"  ){
+                    document.getElementById("method").value=="IRMA";
                     tTracer=580;
                     tVolTracer=11;
                     VolPerTube=0.1;
@@ -834,8 +829,8 @@ function Dis(){
                     
                     document.getElementById("measCpmPerTube").value=102182;
                 }
-                else if(kataskeyasths=="LAB SUPPLIES" && document.getElementById("method").value=="IRMA"){
-                    
+                else if(kataskeyasths=="LAB SUPPLIES" ){
+                    document.getElementById("method").value=="IRMA";
                     tTracer=980;
                     tVolTracer=21;
                     VolPerTube=0.2;
@@ -857,14 +852,14 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("method").value="";
                 }
              break;
             case "FPSA":
                  kataskeyasths=document.getElementById("manu").value;
-                // document.getElementById("method").value="IRMA";
                 var e=document.getElementById("efficiency").value;
-                if(kataskeyasths=="LAB SUPPLIES" && document.getElementById("method").value=="IRMA"){
-                    
+                if(kataskeyasths=="LAB SUPPLIES"){
+                    document.getElementById("method").value="IRMA";
                     tTracer=840;
                     tVolTracer=21;
                     VolPerTube=0.2;
@@ -887,15 +882,15 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("method").value="";
                 }
               break;
             case "RENIN":
                  kataskeyasths=document.getElementById("manu").value;
-                // document.getElementById("method").value="RIA";
                 var e=document.getElementById("efficiency").value;
-                if(kataskeyasths=="BECKMAN" && document.getElementById("method").value=="RIA")
+                if(kataskeyasths=="BECKMAN" )
                {
-                
+                document.getElementById("method").value="RIA";
                 tTracer=260;
                 tVolTracer=11;
                 VolPerTube=0.1;
@@ -905,8 +900,8 @@ function Dis(){
                 perLiq=100-perSol;
                 document.getElementById("measCpmPerTube").value=32472;
                }
-               else if(kataskeyasths=="ZENTECH" && document.getElementById("method").value=="RIA"){
-                
+               else if(kataskeyasths=="ZENTECH" ){
+                document.getElementById("method").value=="RIA";
                 tTracer=148;
                 tVolTracer=50;
                 VolPerTube=0.5;
@@ -927,14 +922,14 @@ function Dis(){
                 VolPerTube=0;
                 perSol=0;
                 document.getElementById("measCpmPerTube").value=0;
+                document.getElementById("method").value="";
             }
              break;
             case "ALDO":
                  kataskeyasths=document.getElementById("manu").value;
-                // document.getElementById("method").value="RIA";
                 var e=document.getElementById("efficiency").value;
-                if(kataskeyasths=="BECKMAN" && document.getElementById("method").value=="RIA"){
-                
+                if(kataskeyasths=="BECKMAN"){
+                document.getElementById("method").value="RIA";
                 tTracer=185;
                 tVolTracer=55;
                 VolPerTube=0.5;
@@ -944,8 +939,8 @@ function Dis(){
                 perLiq=100-perSol;
                 document.getElementById("measCpmPerTube").value=11772;
                 }
-                else if(kataskeyasths=="RIAZENCO" && document.getElementById("method").value=="RIA"){
-                    
+                else if(kataskeyasths=="RIAZENCO"){
+                    document.getElementById("method").value=="RIA";
                     tTracer=85;
                     tVolTracer=50;
                     VolPerTube=0.5;
@@ -967,14 +962,14 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("method").value="";
                 }
             break;
             case "Δ4":
                  kataskeyasths=document.getElementById("manu").value;
-                // document.getElementById("method").value="RIA";
                 var e=document.getElementById("efficiency").value;
-                if(kataskeyasths=="DIASOURCE" && document.getElementById("method").value=="RIA"){
-                    
+                if(kataskeyasths=="DIASOURCE" ){
+                    document.getElementById("method").value="RIA";
                     tTracer=111;
                     tVolTracer=26;
                     VolPerTube=0.25;
@@ -985,8 +980,8 @@ function Dis(){
 
                     document.getElementById("measCpmPerTube").value=22634
                 }
-                else if(mkataskeyasths=="BECKMAN" && document.getElementById("method").value=="RIA"){
-                    
+                else if(mkataskeyasths=="BECKMAN" ){
+                    document.getElementById("method").value=="RIA";
                     tTracer=185;
                     tVolTracer=55;
                     VolPerTube=0.5;
@@ -1008,14 +1003,14 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("method").value="";
                 }
              break;
             case "CALCITONIN":
                  kataskeyasths=document.getElementById("manu").value;
-                // document.getElementById("method").value="IRMA";
                 var e=document.getElementById("efficiency").value;
-                if(kataskeyasths=="IZOTOP" && document.getElementById("method").value=="IRMA"){
-                    
+                if(kataskeyasths=="IZOTOP"){
+                    document.getElementById("method").value="IRMA";
                     tTracer=740;
                     tVolTracer=11;
                     VolPerTube=0.1;
@@ -1026,8 +1021,8 @@ function Dis(){
                     
                     document.getElementById("measCpmPerTube").value=191536;
                 }
-                else if(kataskeyasths=="DIASOURCE" && document.getElementById("method").value=="IRMA"){
-                    
+                else if(kataskeyasths=="DIASOURCE"){
+                    document.getElementById("method").value=="IRMA";
                     tTracer=720;
                     tVolTracer=5.5;
                     VolPerTube=0.05;
@@ -1049,14 +1044,14 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("method").value="";
                 }
             break;
             case "25-OH":
                  kataskeyasths=document.getElementById("manu").value;
-                // document.getElementById("method").value="RIA";
                 var e=document.getElementById("efficiency").value;
-                if(kataskeyasths=="BECKMAN" && document.getElementById("method").value=="RIA"){
-                
+                if(kataskeyasths=="BECKMAN"){
+                    document.getElementById("method").value="RIA";
                 tTracer=160;
                 tVolTracer=6;
                 VolPerTube=0.05;
@@ -1066,8 +1061,8 @@ function Dis(){
                 perLiq=100-perSol;
                 document.getElementById("measCpmPerTube").value=36679;
                 }
-                else if(kataskeyasths=="DIASOURCE" && document.getElementById("method").value=="RIA"){
-                    
+                else if(kataskeyasths=="DIASOURCE"){
+                    document.getElementById("method").value=="RIA";
                     tTracer=160;
                     tVolTracer=6;
                     VolPerTube=0.05;
@@ -1089,14 +1084,14 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("method").value="";
                 }
             break;
             case "ACTH":
                  kataskeyasths=document.getElementById("manu").value;
-                // document.getElementById("method").value="RIA";
                 var e=document.getElementById("efficiency").value;
-                if(kataskeyasths=="BECKMAN" && document.getElementById("method").value=="RIA"){
-                    
+                if(kataskeyasths=="BECKMAN" ){
+                    document.getElementById("method").value="RIA";
                     tTracer=814;
                     tVolTracer=10;
                     VolPerTube=0.1;
@@ -1107,8 +1102,8 @@ function Dis(){
 
                     document.getElementById("measCpmPerTube").value=175480;
                 }
-                else if(kataskeyasths=="BRAHMS" && document.getElementById("method").value=="RIA"){
-                
+                else if(kataskeyasths=="BRAHMS"  ){
+                document.getElementById("method").value=="RIA";
                 tTracer=506;
                 tVolTracer=33;
                 VolPerTube=0.3;
@@ -1118,8 +1113,8 @@ function Dis(){
                 perLiq=100-perSol;
                 document.getElementById("measCpmPerTube").value=140286;
                 }
-                else if(kataskeyasths=="CIS" && document.getElementById("method").value=="RIA"){
-                
+                else if(kataskeyasths=="CIS" ){
+                document.getElementById("method").value=="RIA";
                 tTracer=592;
                 tVolTracer=10;
                 VolPerTube=0.100;
@@ -1140,6 +1135,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("method").value="";
                     
                 }
              break;
@@ -1158,8 +1154,6 @@ function Dis(){
     
        }
        
-
-       //document.getElementById("tubesperkit").value=tubesperkit;
        document.getElementById("tTracer").value=tTracer.toFixed(2);
        document.getElementById("tVolTracer").value=tVolTracer.toFixed(2);
        document.getElementById("VolPerTube").value=VolPerTube.toFixed(2);
