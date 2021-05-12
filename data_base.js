@@ -59,7 +59,7 @@ function Dis(){
             for(let i=1;i<11;i++){
                 document.getElementById("manu").options[i].style="color: black;font-weight:normal";  
             }
-            document.getElemetById("manu").options[2].style="color: rgb(53,96,145);font-weight:bold;";
+            document.getElementById("manu").options[2].style="color: rgb(53,96,145);font-weight:bold;";
            
         break;
         case "Tg":
@@ -135,7 +135,6 @@ function Dis(){
             for(let i=1;i<11;i++){
                 document.getElementById("manu").options[i].style="color: black;font-weight:normal";  
             }
-            document.getElementById("manu").options[1].style="color: rgb(53,96,145);font-weight:bold;";
             document.getElementById("manu").options[8].style="color: rgb(53,96,145);font-weight:bold;";
            
         break;
@@ -143,16 +142,16 @@ function Dis(){
             for(let i=1;i<11;i++){
                 document.getElementById("manu").options[i].style="color: black;font-weight:normal";  
             }
-            document.getElementById("manu").options[1].style="color: black;font-weight:normal"; 
-            document.getElementById("manu").options[10].style="color: black;font-weight:normal"; 
+            document.getElementById("manu").options[1].style="color: rgb(53,96,145);font-weight:bold;";
+            document.getElementById("manu").options[10].style="color: rgb(53,96,145);font-weight:bold;";
                 
         break;
         case "ALDO":
             for(let i=1;i<11;i++){
                 document.getElementById("manu").options[i].style="color: black;font-weight:normal";  
             }
-            document.getElementById("manu").options[1].style="color: black;font-weight:normal"; 
-            document.getElementById("manu").options[9].style="color: black;font-weight:normal"; 
+            document.getElementById("manu").options[1].style="color: rgb(53,96,145);font-weight:bold;"; 
+            document.getElementById("manu").options[9].style="color: rgb(53,96,145);font-weight:bold;"; 
         
         break;
         case "Δ4":
@@ -568,7 +567,7 @@ function Dis(){
                     document.getElementById("measCpmPerTube").value=113234;
                 }
                 else if(kataskeyasths=="BECKMAN"){
-                    document.getElementById("method").value=="IRMA";
+                    document.getElementById("method").value="IRMA";
                     tTracer=640;
                     tVolTracer=33;
                     VolPerTube=0.3;
@@ -653,7 +652,7 @@ function Dis(){
                     document.getElementById("measCpmPerTube").value=45631;
                 }
                 else if(kataskeyasths=="DIASOURCE"){
-                    document.getElementById("method").value=="IRMA";
+                    document.getElementById("method").value="IRMA";
                     tTracer=300;
                     tVolTracer=10.8;
                     VolPerTube=0.1;
@@ -693,8 +692,8 @@ function Dis(){
                     
                     document.getElementById("measCpmPerTube").value=238846;
                 }
-                if(kataskeyasths=="BECKMAN"){
-                    document.getElementById("method").value=="IRMA";
+                else if(kataskeyasths=="BECKMAN"){
+                    document.getElementById("method").value="IRMA";
                     tTracer=480;
                     tVolTracer=33;
                     VolPerTube=0.3;
@@ -737,7 +736,7 @@ function Dis(){
                     document.getElementById("measCpmPerTube").value=130549;
                 }
                 else if(kataskeyasths=="IZOTOP"  ){
-                    document.getElementById("method").value=="IRMA";
+                    document.getElementById("method").value="IRMA";
                     tTracer=980;
                     tVolTracer=21;
                     VolPerTube=0.2;
@@ -777,8 +776,8 @@ function Dis(){
                     
                     document.getElementById("measCpmPerTube").value=125641;
                 }
-                else if(mkataskeyasths=="BECKMAN" ){
-                    document.getElementById("method").value=="IRMA";
+                else if(kataskeyasths=="BECKMAN" ){
+                    document.getElementById("method").value="IRMA";
                     tTracer=320;
                     tVolTracer=22;
                     VolPerTube=0.2;
@@ -818,7 +817,7 @@ function Dis(){
                     document.getElementById("measCpmPerTube").value=178269;
                 }
                 else if(kataskeyasths=="BECKMAN"  ){
-                    document.getElementById("method").value=="IRMA";
+                    document.getElementById("method").value="IRMA";
                     tTracer=580;
                     tVolTracer=11;
                     VolPerTube=0.1;
@@ -830,7 +829,7 @@ function Dis(){
                     document.getElementById("measCpmPerTube").value=102182;
                 }
                 else if(kataskeyasths=="LAB SUPPLIES" ){
-                    document.getElementById("method").value=="IRMA";
+                    document.getElementById("method").value="IRMA";
                     tTracer=980;
                     tVolTracer=21;
                     VolPerTube=0.2;
@@ -901,7 +900,7 @@ function Dis(){
                 document.getElementById("measCpmPerTube").value=32472;
                }
                else if(kataskeyasths=="ZENTECH" ){
-                document.getElementById("method").value=="RIA";
+                document.getElementById("method").value="RIA";
                 tTracer=148;
                 tVolTracer=50;
                 VolPerTube=0.5;
@@ -940,7 +939,7 @@ function Dis(){
                 document.getElementById("measCpmPerTube").value=11772;
                 }
                 else if(kataskeyasths=="RIAZENCO"){
-                    document.getElementById("method").value=="RIA";
+                    document.getElementById("method").value="RIA";
                     tTracer=85;
                     tVolTracer=50;
                     VolPerTube=0.5;
@@ -981,7 +980,7 @@ function Dis(){
                     document.getElementById("measCpmPerTube").value=22634
                 }
                 else if(mkataskeyasths=="BECKMAN" ){
-                    document.getElementById("method").value=="RIA";
+                    document.getElementById("method").value="RIA";
                     tTracer=185;
                     tVolTracer=55;
                     VolPerTube=0.5;
@@ -1022,7 +1021,7 @@ function Dis(){
                     document.getElementById("measCpmPerTube").value=191536;
                 }
                 else if(kataskeyasths=="DIASOURCE"){
-                    document.getElementById("method").value=="IRMA";
+                    document.getElementById("method").value="IRMA";
                     tTracer=720;
                     tVolTracer=5.5;
                     VolPerTube=0.05;
@@ -1062,7 +1061,7 @@ function Dis(){
                 document.getElementById("measCpmPerTube").value=36679;
                 }
                 else if(kataskeyasths=="DIASOURCE"){
-                    document.getElementById("method").value=="RIA";
+                    document.getElementById("method").value="RIA";
                     tTracer=160;
                     tVolTracer=6;
                     VolPerTube=0.05;
@@ -1103,7 +1102,7 @@ function Dis(){
                     document.getElementById("measCpmPerTube").value=175480;
                 }
                 else if(kataskeyasths=="BRAHMS"  ){
-                document.getElementById("method").value=="RIA";
+                document.getElementById("method").value="RIA";
                 tTracer=506;
                 tVolTracer=33;
                 VolPerTube=0.3;
@@ -1114,7 +1113,7 @@ function Dis(){
                 document.getElementById("measCpmPerTube").value=140286;
                 }
                 else if(kataskeyasths=="CIS" ){
-                document.getElementById("method").value=="RIA";
+                document.getElementById("method").value="RIA";
                 tTracer=592;
                 tVolTracer=10;
                 VolPerTube=0.100;
