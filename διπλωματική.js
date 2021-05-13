@@ -359,6 +359,7 @@ function Calc_kBq(){ //υπολογίζει την μετρούμενη ενερ
     let ActivityPerTube=MyCpm/(600*Efficiency);
     
     document.getElementById("measRadPerTube").value=ActivityPerTube.toFixed(5);
+    // document.getElementById("measCpmPerTube").disabled=true;
     console.log(document.getElementById("measRadPerTube").value);
     console.log(MyCpm)
     }
@@ -373,9 +374,9 @@ function Calc_kBq(){ //υπολογίζει την μετρούμενη ενερ
     document.getElementById("measRadPerTube").value=ActivityPerTube.toFixed(5);
     console.log(document.getElementById("measRadPerTube").value);
     }
-    if(document.getElementById("myTotalBox").checked==false){
-        document.getElementById("measCpmPerTube").disabled=false;
-    }
+    // if(document.getElementById("myTotalBox").checked==false){
+    //     document.getElementById("measCpmPerTube").disabled=false;
+    // }
 }
 
 function Calc_Cpm(){
@@ -693,7 +694,7 @@ if(table1.rows.length==2){
 }
 }
 
-function Calc_theoRadPerTube(){//υπολογίζει την θεωρητική ενργότητα ανά σωληνάριο σε kbq και σε cpm
+function Calc_theoRadPerTube(){//υπολογίζει την θεωρητική ενεργότητα ανά σωληνάριο σε kbq και σε cpm
     let tTracer=document.getElementById("tTracer").value;
     let tVolTracer=document.getElementById("tVolTracer").value;
     let VolPerTube=document.getElementById("VolPerTube").value;
@@ -702,7 +703,7 @@ function Calc_theoRadPerTube(){//υπολογίζει την θεωρητική 
     document.getElementById("theoRadPerTube").value=theoRadPerTube.toFixed(2);
     console.log(document.getElementById("theoRadPerTube").value)
     let theoCpmPerTube=theoRadPerTube*e*600;
-    document.getElementById("theoCpmPerTube").value=theoCpmPerTube;
+    document.getElementById("theoCpmPerTube").value=theoCpmPerTube.toFixed(2);
 
 }
 function PercentageCorretion1(){//συμπληρώνει αυτόματα το ποσοστό του υγρού

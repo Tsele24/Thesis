@@ -86,7 +86,7 @@
                     <option value="Other">Other</option>
                    </select>
                    <input type="text" style="width: 65%" id="umanu" disabled></td>
-<td><h5>RIA/IRMA</h5></td><td><select type="name" style="width: 100px" id="method" class="select" onchange="St_values();Calc_kBq();" >
+<td><h5>RIA/IRMA</h5></td><td><select type="name" style="width: 100px" id="method" class="select" >
                 <option value="" selected disabled hidden>-</option>
                 <option value="RIA">RIA</option>
                 <option value="IRMA">IRMA</option>
@@ -100,10 +100,10 @@
 
 <tr><td><fieldset class="groupbox-border" id="groupbox1">
 <legend class="groupbox-border"><h5><input type="checkbox"  id="nominal" onchange="Checkbox1();"><span class="checkbox">ονομαστική ενεργότητα του kit</span></h5></legend>
-<table class="Tables"><tr><td></td><td  colspan="2"><h5>Ονομ. ενεργότητα <br>tracer (kBq)</h5></td><td><input id="tTracer" type="number"></td></tr>
-<tr><td></td><td colspan="2"><h5>Συνολικός όγκος <br>tracer (ml)</h5></td><td><input id="tVolTracer" type="number"></td></tr>
-<tr><td></td><td colspan="2"><h5>Όγκος tracer ανά <br>σωληνάριο (ml)</h5></td><td><input id="VolPerTube" type="number"></td></tr>
-<tr><td></td><td colspan="2"><h5>Ενεργότητα ανά <br>σωληνάριο (kBq)</h5></td><td><input id="theoRadPerTube" type="number"></td></tr>
+<table class="Tables"><tr><td></td><td  colspan="2"><h5>Ονομ. ενεργότητα <br>tracer (kBq)</h5></td><td><input id="tTracer" type="number" onkeyup="Calc_theoRadPerTube()"></td></tr>
+<tr><td></td><td colspan="2"><h5>Συνολικός όγκος <br>tracer (ml)</h5></td><td><input id="tVolTracer" type="number" onkeyup="Calc_theoRadPerTube()"></td></tr>
+<tr><td></td><td colspan="2"><h5>Όγκος tracer ανά <br>σωληνάριο (ml)</h5></td><td><input id="VolPerTube" type="number" onkeyup="Calc_theoRadPerTube()"></td></tr>
+<tr><td></td><td colspan="2"><h5>Ενεργότητα ανά <br>σωληνάριο (kBq)</h5></td><td><input id="theoRadPerTube" type="number" onchange="Calc_theoRadPerTube()"></td></tr>
 <tr><td></td><td colspan="2"><h5>Κρούσεις ανά <br>σωληνάριο (cpm)</h5></td><td><input id="theoCpmPerTube" type="number"></td></tr></table>
 </fieldset>
 </td>

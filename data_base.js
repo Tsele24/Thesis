@@ -158,33 +158,33 @@ function Dis(){
             for(let i=1;i<11;i++){
                 document.getElementById("manu").options[i].style="color: black;font-weight:normal";  
             }
-            document.getElementById("manu").options[1].style="color: black;font-weight:normal"; 
-            document.getElementById("manu").options[4].style="color: black;font-weight:normal"; 
+            document.getElementById("manu").options[1].style="color: rgb(53,96,145);font-weight:bold;";
+            document.getElementById("manu").options[4].style="color: rgb(53,96,145);font-weight:bold;"; 
                        
         break;
         case "CALCITONIN":
             for(let i=1;i<11;i++){
                 document.getElementById("manu").options[i].style="color: black;font-weight:normal";  
             }
-            document.getElementById("manu").options[4].style="color: black;font-weight:normal"; 
-            document.getElementById("manu").options[7].style="color: black;font-weight:normal"; 
+            document.getElementById("manu").options[4].style="color: rgb(53,96,145);font-weight:bold;"; 
+            document.getElementById("manu").options[7].style="color: rgb(53,96,145);font-weight:bold;"; 
            
         break;
         case "25-OH":
             for(let i=1;i<11;i++){
                 document.getElementById("manu").options[i].style="color: black;font-weight:normal";  
             }
-            document.getElementById("manu").options[1].style="color: black;font-weight:normal";
-            document.getElementById("manu").options[4].style="color: black;font-weight:normal";
+            document.getElementById("manu").options[1].style="color: rgb(53,96,145);font-weight:bold;";
+            document.getElementById("manu").options[4].style="color: rgb(53,96,145);font-weight:bold;";
           
         break;
         case "ACTH":
             for(let i=1;i<11;i++){
                 document.getElementById("manu").options[i].style="color: black;font-weight:normal";  
             }
-            document.getElementById("manu").options[1].style="color: black;font-weight:normal";
-            document.getElementById("manu").options[2].style="color: black;font-weight:normal";
-            document.getElementById("manu").options[3].style="color: black;font-weight:normal";
+            document.getElementById("manu").options[1].style="color: rgb(53,96,145);font-weight:bold;";
+            document.getElementById("manu").options[2].style="color: rgb(53,96,145);font-weight:bold;";
+            document.getElementById("manu").options[3].style="color: rgb(53,96,145);font-weight:bold;";
            
         break;
         case "Other":
@@ -225,6 +225,7 @@ function Dis(){
                 perSol=47;
                 perLiq=100-perSol;
                 document.getElementById("measCpmPerTube").value=22573;
+                document.getElementById("measCpmPerTube").disabled=true;
                }
                else if(kataskeyasths=="IZOTOP"){
                 document.getElementById("method").value=="RIA";
@@ -236,6 +237,7 @@ function Dis(){
                 perSol=28;
                 perLiq=100-perSol;
                 document.getElementById("measCpmPerTube").value=69292;
+                document.getElementById("measCpmPerTube").disabled=true;
                }
                else if(kataskeyasths=="Other"){
                    document.getElementById("umanu").disabled=false;
@@ -246,6 +248,7 @@ function Dis(){
                 tVolTracer=0;
                 VolPerTube=0;
                 perSol=0;
+                document.getElementById("measCpmPerTube").disabled=true;
                 document.getElementById("measCpmPerTube").value=0;
                 document.getElementById("method").value="";
             }
@@ -301,6 +304,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("measCpmPerTube").disabled=true;
                     document.getElementById("method").value="";
                 }
            
@@ -356,6 +360,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("measCpmPerTube").disabled=true;
                     document.getElementById("method").value="";
                 }
                 
@@ -410,6 +415,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("measCpmPerTube").disabled=true;
                     document.getElementById("method").value="";
                 }
                 
@@ -465,6 +471,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("measCpmPerTube").disabled=true;
                     document.getElementById("method").value="";
                 }
             break;
@@ -495,6 +502,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("measCpmPerTube").disabled=true;
                     document.getElementById("method").value="";
                 }
             break;
@@ -548,6 +556,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("measCpmPerTube").disabled=true;
                     document.getElementById("method").value="";
                 }
             break;
@@ -591,6 +600,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("measCpmPerTube").disabled=true;
                     document.getElementById("method").value="";
                 }
             break;
@@ -633,6 +643,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("measCpmPerTube").disabled=true;
                     document.getElementById("method").value="";
                 }
             break;
@@ -674,6 +685,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("measCpmPerTube").disabled=true;
                     document.getElementById("method").value="";
                 }
              break;
@@ -716,6 +728,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("measCpmPerTube").disabled=true;
                     document.getElementById("method").value="";
                 }
             break;
@@ -758,6 +771,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("measCpmPerTube").disabled=true;
                     document.getElementById("method").value="";
                 }
             break;
@@ -799,6 +813,8 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("measCpmPerTube").disabled=true;
+                    document.getElementById("method").value="";
                 }
              break;
             case "TPSA":
@@ -851,6 +867,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("measCpmPerTube").disabled=true;
                     document.getElementById("method").value="";
                 }
              break;
@@ -881,6 +898,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("measCpmPerTube").disabled=true;
                     document.getElementById("method").value="";
                 }
               break;
@@ -921,6 +939,7 @@ function Dis(){
                 VolPerTube=0;
                 perSol=0;
                 document.getElementById("measCpmPerTube").value=0;
+                document.getElementById("measCpmPerTube").disabled=true;
                 document.getElementById("method").value="";
             }
              break;
@@ -961,6 +980,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("measCpmPerTube").disabled=true;
                     document.getElementById("method").value="";
                 }
             break;
@@ -979,7 +999,7 @@ function Dis(){
 
                     document.getElementById("measCpmPerTube").value=22634
                 }
-                else if(mkataskeyasths=="BECKMAN" ){
+                else if(kataskeyasths=="BECKMAN" ){
                     document.getElementById("method").value="RIA";
                     tTracer=185;
                     tVolTracer=55;
@@ -1002,6 +1022,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("measCpmPerTube").disabled=true;
                     document.getElementById("method").value="";
                 }
              break;
@@ -1032,7 +1053,7 @@ function Dis(){
                     
                     document.getElementById("measCpmPerTube").value=198902;
                 }
-                else if(mkataskeyasths=="Other"){
+                else if(kataskeyasths=="Other"){
                     document.getElementById("umanu").disabled=false;
                     document.getElementById("measCpmPerTube").value=0;
                 }
@@ -1043,6 +1064,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("measCpmPerTube").disabled=true;
                     document.getElementById("method").value="";
                 }
             break;
@@ -1083,6 +1105,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("measCpmPerTube").disabled=true;
                     document.getElementById("method").value="";
                 }
             break;
@@ -1134,6 +1157,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
+                    document.getElementById("measCpmPerTube").disabled=true;
                     document.getElementById("method").value="";
                     
                 }
@@ -1146,6 +1170,7 @@ function Dis(){
              VolPerTube=0;
              perSol=0;
              document.getElementById("measCpmPerTube").value=0;
+             document.getElementById("measCpmPerTube").disabled=true;
              if(kataskeyasths=="Other"){
                 document.getElementById("umanu").disabled=false;
              }
