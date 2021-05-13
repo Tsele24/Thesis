@@ -74,8 +74,9 @@ function Checkbox2(){
         document.getElementById("theoRadPerTube").disabled=true;
         document.getElementById("theoCpmPerTube").disabled=true;
         document.getElementById("measCpmPerTube").disabled=false;
-        document.getElementById("myTotal").disabled=false;
+        document.getElementById("myTotal").disabled=true;
         document.getElementById("measRadPerTube").disabled=false;
+        console.log(777);
         
     }
 
@@ -390,6 +391,19 @@ function Calc_Cpm(){
 
 function EnMeasRadPerTube(){
     document.getElementById("measRadPerTube").disabled=false;
+}
+
+function DisAndEnMeasCpmPerTube(){
+    if(document.getElementById("myTotalBox").checked==false){
+        console.log("15");
+            document.getElementById("measCpmPerTube").disabled=false;
+            document.getElementById("myTotal").disabled=true;
+         }
+    else{
+        console.log("25");
+        document.getElementById("measCpmPerTube").disabled=true;
+        document.getElementById("myTotal").disabled=false;
+    }
 }
 
 
@@ -725,6 +739,7 @@ function PercentageCorretion1(){//συμπληρώνει αυτόματα το �
  function Clear_otherManu(){
      document.getElementById("umanu").value="";
      document.getElementById("umanu").disabled=true;
+     document.getElementById("myTotal").value="0";
  }
  function Print(){
      window.print()

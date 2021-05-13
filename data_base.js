@@ -225,7 +225,6 @@ function Dis(){
                 perSol=47;
                 perLiq=100-perSol;
                 document.getElementById("measCpmPerTube").value=22573;
-                document.getElementById("measCpmPerTube").disabled=true;
                }
                else if(kataskeyasths=="IZOTOP"){
                 document.getElementById("method").value=="RIA";
@@ -237,7 +236,6 @@ function Dis(){
                 perSol=28;
                 perLiq=100-perSol;
                 document.getElementById("measCpmPerTube").value=69292;
-                document.getElementById("measCpmPerTube").disabled=true;
                }
                else if(kataskeyasths=="Other"){
                    document.getElementById("umanu").disabled=false;
@@ -248,7 +246,7 @@ function Dis(){
                 tVolTracer=0;
                 VolPerTube=0;
                 perSol=0;
-                document.getElementById("measCpmPerTube").disabled=true;
+        
                 document.getElementById("measCpmPerTube").value=0;
                 document.getElementById("method").value="";
             }
@@ -304,7 +302,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
-                    document.getElementById("measCpmPerTube").disabled=true;
+
                     document.getElementById("method").value="";
                 }
            
@@ -360,7 +358,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
-                    document.getElementById("measCpmPerTube").disabled=true;
+
                     document.getElementById("method").value="";
                 }
                 
@@ -415,7 +413,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
-                    document.getElementById("measCpmPerTube").disabled=true;
+
                     document.getElementById("method").value="";
                 }
                 
@@ -471,7 +469,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
-                    document.getElementById("measCpmPerTube").disabled=true;
+
                     document.getElementById("method").value="";
                 }
             break;
@@ -502,7 +500,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
-                    document.getElementById("measCpmPerTube").disabled=true;
+
                     document.getElementById("method").value="";
                 }
             break;
@@ -556,7 +554,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
-                    document.getElementById("measCpmPerTube").disabled=true;
+
                     document.getElementById("method").value="";
                 }
             break;
@@ -600,7 +598,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
-                    document.getElementById("measCpmPerTube").disabled=true;
+
                     document.getElementById("method").value="";
                 }
             break;
@@ -643,7 +641,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
-                    document.getElementById("measCpmPerTube").disabled=true;
+
                     document.getElementById("method").value="";
                 }
             break;
@@ -685,7 +683,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
-                    document.getElementById("measCpmPerTube").disabled=true;
+
                     document.getElementById("method").value="";
                 }
              break;
@@ -728,7 +726,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
-                    document.getElementById("measCpmPerTube").disabled=true;
+
                     document.getElementById("method").value="";
                 }
             break;
@@ -771,7 +769,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
-                    document.getElementById("measCpmPerTube").disabled=true;
+
                     document.getElementById("method").value="";
                 }
             break;
@@ -813,7 +811,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
-                    document.getElementById("measCpmPerTube").disabled=true;
+
                     document.getElementById("method").value="";
                 }
              break;
@@ -867,7 +865,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
-                    document.getElementById("measCpmPerTube").disabled=true;
+
                     document.getElementById("method").value="";
                 }
              break;
@@ -898,7 +896,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
-                    document.getElementById("measCpmPerTube").disabled=true;
+
                     document.getElementById("method").value="";
                 }
               break;
@@ -939,7 +937,6 @@ function Dis(){
                 VolPerTube=0;
                 perSol=0;
                 document.getElementById("measCpmPerTube").value=0;
-                document.getElementById("measCpmPerTube").disabled=true;
                 document.getElementById("method").value="";
             }
              break;
@@ -980,7 +977,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
-                    document.getElementById("measCpmPerTube").disabled=true;
+
                     document.getElementById("method").value="";
                 }
             break;
@@ -1022,7 +1019,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
-                    document.getElementById("measCpmPerTube").disabled=true;
+
                     document.getElementById("method").value="";
                 }
              break;
@@ -1064,7 +1061,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
-                    document.getElementById("measCpmPerTube").disabled=true;
+
                     document.getElementById("method").value="";
                 }
             break;
@@ -1105,7 +1102,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
-                    document.getElementById("measCpmPerTube").disabled=true;
+
                     document.getElementById("method").value="";
                 }
             break;
@@ -1157,7 +1154,7 @@ function Dis(){
                     VolPerTube=0;
                     perSol=0;
                     document.getElementById("measCpmPerTube").value=0;
-                    document.getElementById("measCpmPerTube").disabled=true;
+
                     document.getElementById("method").value="";
                     
                 }
@@ -1170,7 +1167,6 @@ function Dis(){
              VolPerTube=0;
              perSol=0;
              document.getElementById("measCpmPerTube").value=0;
-             document.getElementById("measCpmPerTube").disabled=true;
              if(kataskeyasths=="Other"){
                 document.getElementById("umanu").disabled=false;
              }
@@ -1193,5 +1189,6 @@ function Dis(){
         document.getElementById("method").value="";
         document.getElementById("sol_waste").value="0";
         document.getElementById("liq_waste").value="0";
+        document.getElementById("myTotal").value="0";
     }
     
