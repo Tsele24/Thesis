@@ -5,9 +5,9 @@
 <meta name="web application">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="διπλωματική-test2.css">
-<script src="διπλωματική.js" ></script>
+<script src="διπλωλατικη-τεστ.js" ></script>
 <script src="change language.js" ></script>
-<script src="data_base.js" ></script>
+<script src="data-test.js" ></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
  <script
@@ -44,7 +44,7 @@
 </table>
 <table id="intables-2">
 <tr>
-<td><h5>Εξέταση</h5></td><td><select name="Sel kit" id="kit" style="width: 60%" class="select" onchange="ClearSolidAndLiquidWaste();Clear_otherKit();ResetValues();Dis();St_values();Calc_kBq();" >
+<td><h5>Εξέταση</h5></td><td><select name="Sel kit" id="kit" style="width: 60%" class="select" onchange="ResetValues();Dis();EnKit();Data_insert();Calc_kBq();" >
                     <option value="" selected disabled hidden>-</option>
                     <option value="FT3">FT3</option>
                     <option value="FT4">FT4</option>
@@ -85,7 +85,7 @@
                       </select>
                       <input type="text" style="width: 57%" id="ukit" disabled></td>
 <td><h5>Κατασκευαστής</h5></td>
-<td> <select  name="Manurer" id="manu" class="select" style="width: 65%" onchange="Clear_otherManu();St_values();Calc_kBq();">
+<td> <select  name="Manurer" id="manu" class="select" style="width: 65%" onchange="EnManu();Data_insert();Calc_kBq();">
                     <option value="" selected disabled hidden>-</option>
                     <option value="BECKMAN">BECKMAN COULTER</option>
                     <option value="BRAHMS">BRAHMS</option>
@@ -100,7 +100,7 @@
                     <option value="Other">Other</option>
                    </select>
                    <input type="text" style="width: 65%" id="umanu" disabled></td>
-<td><h5>RIA/IRMA</h5></td><td><select type="name" style="width: 100px" id="method" class="select" onchange="RiaIrmaAverage()">
+<td><h5>RIA/IRMA</h5></td><td><select type="name" style="width: 100px" id="method" class="select" onchange="ria_irma_average()">
                 <option value="" selected disabled hidden>-</option>
                 <option value="RIA">RIA</option>
                 <option value="IRMA">IRMA</option>
