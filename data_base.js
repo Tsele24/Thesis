@@ -64,6 +64,7 @@ function ria_irma_average(){
         Calc_kBq();
       }
       else{
+        console.log(888);
         tTracer=0;
         tVolTracer=0;
         VolPerTube=0;
