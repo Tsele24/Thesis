@@ -682,4 +682,9 @@ function PercentageCorretion1(){//συμπληρώνει αυτόματα το �
     document.getElementById("measCpmPerTube").value="0";
     document.getElementById("measRadPerTube").value="0";
 }
- 
+function EfficiecyConverter(){
+    let cpmPerkBq=document.getElementById("cpm/kBq").value;
+    let efficiency=cpmPerkBq/600;
+    document.getElementById("efficiency").value=efficiency.toFixed(4);
+    
+}

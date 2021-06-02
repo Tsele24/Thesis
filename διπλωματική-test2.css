@@ -40,6 +40,7 @@ h5{
     font-weight:normal;
     font-size: small;
     border-collapse: collapse;
+    text-align:right;
 }
 h4{
     font-family:cursive;
@@ -289,10 +290,17 @@ img{
       padding-right:100px;
     }
     #groupbox2{
-      height:269.9px;
+      height:268px;
+      margin-left:40px;
     }
-    #groypbox3{
-      height:268.6px;
+    #groupbox3{
+      padding-bottom:0px;
+      height:268px;
+      margin-left:40px;
+    }
+    #groupbox1{
+      padding-bottom:0px;
+      height:268px;
     }
 
     #del{
@@ -309,4 +317,7 @@ img{
       border-radius: 50%;
       border:none;
       cursor: pointer;
+    }
+    .groupbox-border{
+      text-align:center;
     }

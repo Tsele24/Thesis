@@ -98,7 +98,7 @@
 </tr>
 
 </table>
-<div  style="padding-left:300px;"><h5>Οι υπολογισμοί να γίνουν με:</h5></div>
+<div  style="padding-left:300px;"><h5 style="text-align:left;">Οι υπολογισμοί να γίνουν με:</h5></div>
 <table>
 
 <tr><td><fieldset class="groupbox-border" id="groupbox1">
@@ -116,13 +116,14 @@
 <tr><td></td><td><h5><input type="checkbox"  id="myTotalBox" onchange="Calc_kBq();DisAndEnMeasCpmPerTube();"><span class="checkbox">Ίδιες μετρ.κρούσεις <br>ανά σωληνάριο (cpm)</span></h5></td><td><input id="myTotal" type="number" onkeyup="Calc_kBq();" ></td></tr>
 <tr ><td></td><td><h5>Μετρ. ενεργότητα  <br>ανά σωληνάριο (kBq)</h5></td><td><input id="measRadPerTube" type="number"></td></tr>
 <tr><td><h5>&nbsp;</h5></td></tr>
-<tr><td></td><td><h5 >Ευαισθησία <br> γ-counter (%)</h5></td><td><input id="efficiency" value="79.2335" type="number" onkeyup="Calc_kBq();Calc_Cpm();"></td></tr>
+<tr><td></td><td><h5>Ευαισθησία γ-counter (%)</h5></td><td><input id="efficiency" value="79.2333" type="number" onkeyup="Calc_kBq();Calc_Cpm();"></td></tr>
+<tr><td></td><td><h5>cpm/kBq</h5></td><td><input id="cpm/kBq" value="47540" type="number" onkeyup="EfficiecyConverter();Calc_kBq();Calc_Cpm();"></td></tr>
 </table>
 </fieldset>
 </td>
-<td><fieldset class="groupbox-border" id="groupbox3">
+<td><fieldset class="groupbox-border" id="groupbox3" >
 <legend class="groupbox-border"><h5>Υπολογισμοί</h5></legend>
-<table class="Tables" ><tr><td></td><td colspan="2"><h5>Ποσοστό <br> στερεών (%)</h5></td><td><input id="perSol" type="number" onkeyup="PercentageCorretion1()"></td></tr>
+<table class="Tables" ><tr><td style="width:2px;"></td><td colspan="2"><h5>Ποσοστό <br> στερεών (%)</h5></td><td><input id="perSol" type="number" onkeyup="PercentageCorretion1()"></td></tr>
 <tr><td></td><td colspan="2"><h5>Ποσοστό <br> υγρών (%)</h5></td><td><input id="perLiq" type="number" onkeyup="PercentageCorretion2()"></td></tr>
 <tr><td colspan="2"><div class="calc"><button id="calc" class="button"  onclick="Calcs();">Υπολογισμός</button></div></td></tr>
 <tr><td></td><td colspan="2"><h5>Στερεά απόβλητα <br>(kBq)</h5></td><td><input id="sol_waste" type="number"></td></tr>
