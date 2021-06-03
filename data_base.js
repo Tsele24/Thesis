@@ -58,7 +58,7 @@ var data_set=[["kit","manufacturer","method","tTracer","tVolume","ml_per_tube","
 ["FPSA","BECKMAN","IRMA","275","5.5","0.100","","6","94"],
 ["FPSA","DIASOURCE","IRMA","740","21","0.200","","6","94"],
 ["FPSA","IZOTOP","IRMA","740","11","0.100","","6","94"],
-["FPSA","LABSUPPLIES","IRMA","840","21","0.200","171319","11","89"],
+["FPSA","LAB SUPPLIES","IRMA","840","21","0.200","171319","11","89"],
 ["FSH","BECKMAN","IRMA","370","5.5","0.050","","6","94"],
 ["FSH","DIASOURCE","IRMA","700","5.5","0.050","","6","94"],
 ["FSH","IZOTOP","IRMA","740","21","0.200","","6","94"],
@@ -105,6 +105,20 @@ var data_set=[["kit","manufacturer","method","tTracer","tVolume","ml_per_tube","
 ["Testosterone","IZOTOP","RIA","260","44","0.400","","25","75"],
 ["rTSH-Ab","BECKMAN","RIA","180","11","0.100","","25","75"],
 ["rTSH-Ab","BRAHMS","RIA","80","11","0.100","21711","31","69"]]
+// var allKits=data_set.map(f => f[0]);
+// console.log(allKits);
+// var Kits=allKits.filter((v, i, a) => a.indexOf(v) === i);
+//     Kits.shift();
+// console.log(Kits);
+// var allManufacturers=data_set.map(f => f[1]);
+// var Manufacturers=allManufacturers.filter((v,i,a) => a.indexOf(v) === i);
+//     Manufacturers.shift();
+// console.log(Manufacturers);
+// var selects=document.getElementsByTagName("select");
+//     var opt=document.createElement("option");
+//         opt.appendChild(document.createTextNode("T3"));
+//         opt.value=Kits[0];
+//         console.log(opt);
 function Data_insert(){
     let Kit=document.getElementById("kit").value;
     let manufacturer=document.getElementById("manu").value;
