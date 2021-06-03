@@ -9,7 +9,7 @@
 <script src="data_base.js" ></script>
 <title>Web app auth</title>
 </head>
-<body style="padding-left:40px;">
+<body style="padding-left:40px;" onload="create_lists();">
 
 <div>
 <table>
@@ -39,54 +39,11 @@
 <tr>
 <td><h5>Εξέταση</h5></td><td><select name="Sel kit" id="kit" style="width: 60%" class="select" onchange="ResetValues();Dis();EnKit();Data_insert();Calc_kBq();" >
                     <option value="" selected disabled hidden>-</option>
-                     <option value="T3">T3</option>
-                    <option value="T4">T4</option>
-                    <option value="FT3">FT3</option>
-                    <option value="FT4">FT4</option>
-                    <option value="TSH">TSH</option>
-                    <option value="TgAb">TgAb</option>
-                    <option value="TPO">TPO</option>
-                    <option value="Tg">Tg</option>
-                    <option value="CEA">CEA</option>
-                    <option value="CA 15-3">CA 15-3</option>
-                    <option value="CA 19-9">CA 19-9</option>
-                    <option value="CA 125">CA 125</option>
-                    <option value="AFP">AFP</option>
-                    <option value="TPSA">TPSA</option>
-                    <option value="FPSA">FPSA</option>
-                    <option value="FSH">FSH</option>
-                    <option value="LH">LH</option>
-                    <option value="Prolactin">Prolactin</option>
-                    <option value="β-HCG">β-HCG</option>
-                    <option value="17-OH Progesterone">17-OH Progesterone</option>
-                    <option value="DHEA-S">DHEA-S</option>
-                    <option value="ACTH">ACTH</option>
-                    <option value="Angiotensin">Angiotensin</option>
-                    <option value="Aldosterone">Aldosterone</option>
-                    <option value="Δ4-Androstenedione">Δ4-Androstenedione</option>
-                    <option value="Calcitonin">Calcitonin</option>
-                    <option value="25-OH-Vitamin D">25-OH-Vitamin D</option>
-                    <option value="PTH">PTH</option>
-                    <option value="AchRAb">AchRAb</option>
-                    <option value="Insulin">Insulin</option>
-                    <option value="C-peptide">C-peptide</option>
-                    <option value="Testosterone">Testosterone</option>
-                    <option value="rTSH-Ab">rTSH-Ab</option>
-                    <option value="Other">Other</option>
                       </select>
                       <input type="text" style="width: 57%" id="ukit" disabled></td>
 <td><h5>Κατασκευαστής</h5></td>
 <td> <select  name="Manurer" id="manu" class="select" style="width: 65%" onchange="EnManu();ria_irma_average();Data_insert();Calc_kBq();">
                     <option value="" selected disabled hidden>-</option>
-                    <option value="BECKMAN">BECKMAN COULTER</option>
-                    <option value="BRAHMS">BRAHMS</option>
-                    <option value="CIS BIO">CIS BIO</option>
-                    <option value="DIASOURCE">DIASOURCE</option>
-                    <option value="DIASORIN">DIASORIN</option>
-                    <option value="IBL">IBL</option>
-                    <option value="IZOTOP">IZOTOP</option>
-                    <option value="LAB SUPPLIES">LAB SUPPLIES</option>
-                    <option value="Other">Other</option>
                    </select>
                    <input type="text" style="width: 65%" id="umanu" disabled></td>
 <td><h5>RIA/IRMA</h5></td><td><select type="name" style="width: 100px" id="method" class="select" onchange="ria_irma_average()">
@@ -155,4 +112,5 @@
 </div>
 </div>
 </body>
+
 </html>

@@ -25,7 +25,6 @@ var RoWs = [[[]]];
 var Roows=[];
 var SS=[[]];
 var SL=[[]];
-
 function ClearSolidAndLiquidWaste(){
     document.getElementById("sol_waste").innerHTML="";
     document.getElementById("liq_waste").innerHTML="";
