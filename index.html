@@ -73,8 +73,8 @@
 <tr><td></td><td><h5><input type="checkbox"  id="myTotalBox" onchange="Calc_kBq();DisAndEnMeasCpmPerTube();"><span class="checkbox">Ίδιες μετρ.κρούσεις <br>ανά σωληνάριο (cpm)</span></h5></td><td><input id="myTotal" type="number" onkeyup="Calc_kBq();" ></td></tr>
 <tr ><td></td><td><h5>Μετρ. ενεργότητα  <br>ανά σωληνάριο (kBq)</h5></td><td><input id="measRadPerTube" type="number"></td></tr>
 <tr><td><h5>&nbsp;</h5></td></tr>
-<tr><td></td><td><h5>Ευαισθησία γ-counter (%)</h5></td><td><input id="efficiency" value="79.2333" type="number" onkeyup="Calc_kBq();Calc_Cpm();" readonly></td></tr>
-<tr><td></td><td><h5>cpm/kBq</h5></td><td><input id="cpm/kBq" value="47540" type="number" onkeyup="EfficiecyConverter();Calc_kBq();Calc_Cpm();"></td></tr>
+<tr><td></td><td><h5>Ευαισθησία γ-counter (%)</h5></td><td><input id="efficiency" value="79.2333" type="number" onkeyup="PercentageToCpmPerKBq();Calc_kBq();Calc_Cpm();" ></td></tr>
+<tr><td></td><td><h5>cpm/kBq</h5></td><td><input id="cpm/kBq" value="47540" type="number" onkeyup="CpmPerKBqToPercentage();Calc_kBq();Calc_Cpm();"></td></tr>
 </table>
 </fieldset>
 </td>
@@ -96,17 +96,17 @@
 <div id="print-container" class="row">
 <div class="column">
 <table style="width:120%;"  id="csv_table">
-<legend id="legend_center1"><div><h3><u>Συγκεντρωτικός Πίνακας</u><h3></div></legend>
-<tr><th><h4>Ημερομηνία</h4></th><th><h4>Kit</h4></th><th><h4>Κατασκευαστής</h4></th><th><h4>#σωληναρίων</h4></th><th><h4>Στερεά απόβλητα<br>(kBq)</h4></th><th><h4>Υγρά απόβλητα<br>(kBq)</h4></th><th><h4>Στερεά+Υγρά<br>(kBq)</h4></th>
+<legend id="legend_center1"><div><h3><u>Αναλυτικός Πίνακας απορρίψεων</u><h3></div></legend>
+<tr><th><h4>Ημερομηνία</h4></th><th><h4>Kit</h4></th><th><h4>Κατασκευαστής</h4></th><th><h4>#σωληναρίων</h4></th><th><h4>Στερεά απόβλητα (kBq)</h4></th><th><h4>Υγρά απόβλητα (kBq)</h4></th><th><h4>Σύνολο (kBq)</h4></th>
 </tr>
 </table>
 </div>
 <div class="column" style="left:130px;">
 <table  id="csv_table_Sums" >
 <tr>
-<legend id="legend_center2"><div><h3><u>Πίνακας αθροισμάτων ανά ημέρα</u><h3></div></legend>
+<legend id="legend_center2"><div><h3><u>Πίνακας ημερήσιων απορρίψεων</u><h3></div></legend>
     <th><h4>Ημερομηνία</h4></th>
-    <th><h4>Άθροισμα Στερεών <br>αποβλήτων(kBq)</h4></th><th><h4>Άθροισμα Υγρών <br>αποβλήτων(kBq)</h4></th><th><h4>Συνολικά<br> απόβλητα(kBq)</h4></th>
+    <th><h4>Στερεά απόβλητα (kBq)</h4></th><th><h4>Υγρά απόβλητα(kBq)</h4></th><th><h4>Συνολικά (kBq)</h4></th>
 </tr>
 </table>
 </div>

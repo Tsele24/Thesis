@@ -5,11 +5,11 @@ var greek_words_h5=["Ημερομηνία","Άνοιγμα αρχείου :","Ε
 "Ενεργότητα ανά<br> σωληνάριο (kBq)","Κρούσεις ανά<br> σωληνάριο (cpm)","μετρούμενες τιμές cpm του kit","Τυπικές μετρ. κρούσεις <br>ανά σωληνάριο (cpm)"
 ,"Ίδιες μετρ.κρούσεις<br> ανά σωληνάριο (cpm)","Μετρ. ενεργότητα<br> ανά σωληνάριο (kBq)","&nbsp;","Ευαισθησία γ-counter (%)","cpm/kBq","Υπολογισμοί",
 "Ποσοστό<br> στερεών (%)","Ποσοστό<br> υγρών (%)","Στερεά απόβλητα<br> (kBq)","Υγρά απόβλητα<br> (kBq)"];
-var greek_words_underlined=["Συγκεντρωτικός Πίνακας","Πίνακας αθροισμάτων ανά ημέρα"];
+var greek_words_underlined=["Αναλυτικός Πίνακας απορρίψεων","Πίνακας ημερήσιων απορρίψεων"];
 
-var greek_words_h4=["Ημερομηνία","Kit","Κατασκευαστής","#σωληναρίων","Στερεά απόβλητα<br>(kBq)",
-"Υγρά απόβλητα<br>(kBq)","Στερεά+Υγρά<br>(kBq)","Ημερομηνία","Άθροισμα Στερεών<br> αποβλήτων(kBq)",
-"Άθροισμα Υγρών<br> αποβλήτων(kBq)","Συνολικά <br>απόβλητα(kBq)"];
+var greek_words_h4=["Ημερομηνία","Kit","Κατασκευαστής","#σωληναρίων","Στερεά απόβλητα (kBq)",
+"Υγρά απόβλητα (kBq)","Σύνολο (kBq)","Ημερομηνία","Στερεά απόβλητα (kBq)",
+"Υγρά απόβλητα (kBq)","Σύνολο (kBq)"];
 var greek_words_buttons=["Υπολογισμός","Αποθήκευση","Εκτύπωση"];
 var english_words_h5=["&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date",
 "&nbsp;Open file :","Assay","Manufucturer","RIA/IRMA","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#tubes"
@@ -17,9 +17,10 @@ var english_words_h5=["&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date",
 "Tracer volume<br> per tube (ml)","Activity added  <br> per tube (kBq)","Counts added <br>per tube (cpm)","actual kit measured cpm","Typical counts added<br> per tube (cpm)",
 "Own measured counts added<br> per tube (cpm)","Measured activity<br> per tube (kBq)","&nbsp;","γ-counter sensitivity (%)","cpm/kBq","Calculations",
 "Solid<br> percentage (%)","Liquid <br>percentage (%)","Solid waste<br> (kBq)","Liquid waste<br> (kBq)"];
-var english_words_underlined=["Concentrating Table","Sum Per Day Table"];
+var english_words_underlined=["Analytical discharge Table","Daily discharge Table"];
 var english_words_buttons=["Calculation","Save","Print"];
-var english_words_h4=["Date","Kit","Manufacturer","#tubes","Solid waste<br>(kBq)","Liquid waste<br>(kBq)","Solid+Liquid<br>(kBq)","Date","Sum Solid waste(kBq)","Sum Liquid waste(kBq)","Total waste(kBq)"]
+var english_words_h4=["Date","Kit","Manufacturer","#tubes","Solid waste (kBq)","Liquid waste (kBq)","Total (kBq)",
+"Date","Solid (kBq)","Liquid (kBq)","Total (kBq)"]
 function gr(){
   let Labels1=document.getElementsByTagName("h5");
   let Labels2=document.getElementsByTagName("u");
