@@ -58,7 +58,6 @@ var data_set=[["kit","manufacturer","method","tTracer","tVolume","ml_per_tube","
 ["FPSA","BECKMAN COULTER","IRMA","275","5.5","0.100","","6","94"],
 ["FPSA","DIASOURCE","IRMA","740","21","0.200","","6","94"],
 ["FPSA","IZOTOP","IRMA","740","11","0.100","","6","94"],
-["FPSA","LAB SUPPLIES","IRMA","840","21","0.200","171319","11","89"],
 ["FSH","BECKMAN COULTER","IRMA","370","5.5","0.050","","6","94"],
 ["FSH","DIASOURCE","IRMA","700","5.5","0.050","","6","94"],
 ["FSH","IZOTOP","IRMA","740","21","0.200","","6","94"],
@@ -115,6 +114,7 @@ function create_lists(){
     let allManufacturers=data_set.map(f => f[1]);
     let Manufacturers=allManufacturers.filter((v,i,a) => a.indexOf(v) === i);
         Manufacturers.shift();
+        Manufacturers.sort();
         Manufacturers.push("Other");
     console.log(Manufacturers);
     let selectKits=document.getElementById("kit");

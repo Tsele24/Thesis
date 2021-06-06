@@ -70,16 +70,35 @@ function Checkbox2(){
 }
 function Calcs() {
     if(document.getElementById("tubes").value==0){
-        alert("Γράψε έναν μη μηδενικό αριθμό σωληναρίων!");
-        return
+        if(document.getElementById("assay").innerHTML=="Εξέταση"){
+            alert("Γράψε έναν μη μηδενικό αριθμό σωληναρίων!");
+            return
+        }
+        else{
+            alert("Type a non-zero number of tubes!");
+            return
+        }
+        
     }
     if(document.getElementById("date").value==""){
+        if(document.getElementById("assay").innerHTML=="Εξέταση"){
         alert("Επίλεξε μία ημερομηνία!");
         return
+        }
+        else{
+            alert("Choose a date!");
+            return
+        }
     }
     if(document.getElementById("nominal").checked==false && document.getElementById("my_cpm").checked==false){
+        if(document.getElementById("assay").innerHTML=="Εξέταση"){
         alert("Διάλεξε έναν από τους δύο τρόπους υπολογισμού!");
         return
+        }
+        else{
+        alert("Choose a calculation method!");
+        return
+        }
     }
    if(document.getElementById("nominal").checked==true){
     let tubes=document.getElementById("tubes").value;
@@ -333,9 +352,17 @@ function DisAndEnMeasCpmPerTube(){
     document.body.removeChild(a);
   }
 function UploadFileAlert(){
-    if(rows.length>1){
-        alert("Προσοχή! Όποια καταχώρηση έχει γίνει θα διαγραφθεί, αν δεν θέλετε να διαγραφθεί πατήστε το άκυρο.");
+    if(document.getElementById("assay").innerHTML=="Εξέταση"){
+        if(rows.length>1){
+            alert("Προσοχή! Όποια καταχώρηση έχει γίνει θα διαγραφθεί, αν δεν θέλετε να διαγραφθεί πατήστε το άκυρο.");
+        }
     }
+    else{
+        if(rows.length>1){
+            alert("Caution! The registrations will be deleted, otherwise click cancel.");
+        }
+    }
+   
 }
   function processFile(){
     var filename=document.getElementById("MyFile").value;
