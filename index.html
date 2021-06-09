@@ -60,11 +60,11 @@
 
 <tr><td><fieldset class="groupbox-border" id="groupbox1">
 <legend class="groupbox-border"><h5><input type="checkbox"  id="nominal" onchange="Checkbox1();"><span class="checkbox">ονομαστική ενεργότητα του kit</span></h5></legend>
-<table class="Tables"><tr><td></td><td  colspan="2"><h5>Ονομ. ενεργότητα <br>tracer (kBq)</h5></td><td><input id="tTracer" type="number" onkeyup="Calc_theoRadPerTube()"></td></tr>
-<tr><td></td><td colspan="2"><h5>Συνολικός όγκος <br>tracer (ml)</h5></td><td><input id="tVolTracer" type="number" onkeyup="Calc_theoRadPerTube()"></td></tr>
-<tr><td></td><td colspan="2"><h5>Όγκος tracer ανά <br>σωληνάριο (ml)</h5></td><td><input id="VolPerTube" type="number" onkeyup="Calc_theoRadPerTube()"></td></tr>
-<tr><td></td><td colspan="2"><h5>Ενεργότητα ανά <br>σωληνάριο (kBq)</h5></td><td><input id="theoRadPerTube" type="number" onchange="Calc_theoRadPerTube()"></td></tr>
-<tr><td></td><td colspan="2"><h5>Κρούσεις ανά <br>σωληνάριο (cpm)</h5></td><td><input id="theoCpmPerTube" type="number"></td></tr></table>
+<table class="Tables"><tr><td></td><td  colspan="2"><h5>Ονομ. ενεργότητα <br>tracer (kBq)</h5></td><td><input id="tTracer" type="number" onkeyup="Calc_theoRadPerTube();Calc_Cpm();" ></td></tr>
+<tr><td></td><td colspan="2"><h5>Συνολικός όγκος <br>tracer (ml)</h5></td><td><input id="tVolTracer" type="number" onkeyup="Calc_theoRadPerTube();Calc_Cpm();" ></td></tr>
+<tr><td></td><td colspan="2"><h5>Όγκος tracer ανά <br>σωληνάριο (ml)</h5></td><td><input id="VolPerTube" type="number" onkeyup="Calc_theoRadPerTube();Calc_Cpm();" ></td></tr>
+<tr><td></td><td colspan="2"><h5>Ενεργότητα ανά <br>σωληνάριο (kBq)</h5></td><td><input id="theoRadPerTube" type="number" readonly></td></tr>
+<tr><td></td><td colspan="2"><h5>Κρούσεις ανά <br>σωληνάριο (cpm)</h5></td><td><input id="theoCpmPerTube" type="number" readonly></td></tr></table>
 </fieldset>
 </td>
 <td><fieldset class="groupbox-border" id="groupbox2">

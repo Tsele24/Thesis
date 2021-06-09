@@ -307,6 +307,7 @@ function Calc_kBq(){ //υπολογίζει την μετρούμενη ενερ
     }
 }
 function Calc_Cpm(){
+    console.log(222);
     let Efficiency=document.getElementById("efficiency").value;
     let ActivityPerTube=document.getElementById("theoRadPerTube").value;
     let CpmPerTubeNominal=ActivityPerTube*600*Efficiency;
