@@ -153,9 +153,9 @@ function Data_insert(){
     document.getElementById("measCpmPerTube").value=data[0][6];
     document.getElementById("perSol").value=data[0][7];
     document.getElementById("perLiq").value=data[0][8];
-    document.getElementById("theoRadPerTube").value=theoRadPerTube.toFixed(3);
-    document.getElementById("theoCpmPerTube").value=theoCpmPerTube.toFixed(2);
+    document.getElementById("theoRadPerTube").value=theoRadPerTube;
     Calc_Cpm();
+    document.getElementById("theoRadPerTube").value=theoRadPerTube.toFixed(3);
 }
 function ria_irma_average(){
     let Kit=document.getElementById("kit").value;
