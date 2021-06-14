@@ -68,6 +68,25 @@ function Checkbox2(){
         document.getElementById("measRadPerTube").disabled=false;
     }
 }
+function Sums(){
+let Allsolidwastes=[];
+let AllLiquidwastes=[];
+let AllWastes=0;
+Allsolidwastes=RoWs.map(d => parseFloat(d[4]));// επιλέγω από έναν πίνακα 2d μία στήλη την οποία αθροίζω μετά
+AllLiquidwastes=RoWs.map(d => parseFloat(d[5]))// επιλέγω από έναν πίνακα 2d μία στήλη την οποία αθροίζω μετά
+ Allsolidwastes=Allsolidwastes.reduce((a,b)=>a+b,0).toFixed(2);
+ AllLiquidwastes=AllLiquidwastes.reduce((a,b)=>a+b,0).toFixed(2);
+ Allsolidwastes=parseFloat(Allsolidwastes);
+ AllLiquidwastes=parseFloat(AllLiquidwastes);
+ AllWastes=Allsolidwastes+AllLiquidwastes;
+rows.push(["Total Waste(kBq)","","","",Allsolidwastes.toFixed(2).toString(),AllLiquidwastes.toFixed(2).toString(),AllWastes.toFixed(2).toString()]);
+}
+function Create_table1(){
+    
+}
+function Create_table2(){
+
+}
 function Calcs() {
     if(document.getElementById("tubes").value==0){
         if(document.getElementById("assay").innerHTML=="Εξέταση"){
@@ -213,17 +232,7 @@ for(var i=0;i<dates.length;i++){
      Sum_When_delete=SS[i].reduce((a,b)=>a+b,0)+SL[i].reduce((a,b)=>a+b,0)
      rows[i+1].push(Sum_When_delete.toFixed(2).toString())
  }
-let Allsolidwastes=[];
-let AllLiquidwastes=[];
-let AllWastes=0;
-Allsolidwastes=RoWs.map(d => parseFloat(d[4]));// επιλέγω από έναν πίνακα 2d μία στήλη την οποία αθροίζω μετά
-AllLiquidwastes=RoWs.map(d => parseFloat(d[5]))// επιλέγω από έναν πίνακα 2d μία στήλη την οποία αθροίζω μετά
- Allsolidwastes=Allsolidwastes.reduce((a,b)=>a+b,0).toFixed(2);
- AllLiquidwastes=AllLiquidwastes.reduce((a,b)=>a+b,0).toFixed(2);
- Allsolidwastes=parseFloat(Allsolidwastes);
- AllLiquidwastes=parseFloat(AllLiquidwastes);
- AllWastes=Allsolidwastes+AllLiquidwastes;
-rows.push(["Total Waste(kBq)","","","",Allsolidwastes.toFixed(2).toString(),AllLiquidwastes.toFixed(2).toString(),AllWastes.toFixed(2).toString()]);
+ Sums();
  let overall=rows[rows.length-1].slice(4,7);
  overall.unshift("Total Waste(kBq)");
  let last_row=rows[dates.length+1].concat(overall);
@@ -447,6 +456,7 @@ for(var i=0;i<dates.length;i++){
        table2.rows[i+1].insertCell(j+1).innerHTML=rows[i+1][8+j]
    }
 }
+var table2=document.getElementById("csv_table_Sums");
 table2.insertRow(table2.rows.length);
 let LastRowOfrows=rows[rows.length-1];   //προσθέτει και την τελευαταια γραμμη με το Total Sum στου δευτερου πινακα
 LastRowOfrows.splice(1,3);
@@ -515,22 +525,9 @@ for(var i=0;i<dates.length;i++){
      rows[i+1].push(Sum_When_delete.toFixed(2).toString())
  }
  rows.pop();
- let Allsolidwastes=[];
- let AllLiquidwastes=[];
- let AllWastes=0;
  RoWs.pop();
  RoWs.shift();
- console.log(RoWs);
- Allsolidwastes=RoWs.map(d => parseFloat(d[4]));// επιλέγω από έναν πίνακα 2d μία στήλη την οποία αθροίζω μετά
- AllLiquidwastes=RoWs.map(d => parseFloat(d[5]));// επιλέγω από έναν πίνακα 2d μία στήλη την οποία αθροίζω μετά
-  Allsolidwastes=Allsolidwastes.reduce((a,b)=>a+b,0).toFixed(2);
-  AllLiquidwastes=AllLiquidwastes.reduce((a,b)=>a+b,0).toFixed(2);
-  console.log(Allsolidwastes);
-  console.log(AllLiquidwastes);
-  Allsolidwastes=parseFloat(Allsolidwastes);
-  AllLiquidwastes=parseFloat(AllLiquidwastes);
-  AllWastes=Allsolidwastes+AllLiquidwastes;
- rows.push(["Total Waste(kBq)","","","",Allsolidwastes.toFixed(2).toString(),AllLiquidwastes.toFixed(2).toString(),AllWastes.toFixed(2).toString()])
+ Sums();
   console.log(rows)
   var table1=document.getElementById("csv_table");
   if(table1.rows.length>1){
@@ -564,6 +561,13 @@ for(var i=0;i<dates.length;i++){
    for(var j=0;j<3;j++){
        table2.rows[i+1].insertCell(j+1).innerHTML=rows[i+1][8+j]
    }
+}
+table2=document.getElementById("csv_table_Sums");
+table2.insertRow(table2.rows.length);
+let LastRowOfrows=rows[rows.length-1];   //προσθέτει και την τελευαταια γραμμη με το Total Sum στου δευτερου πινακα
+LastRowOfrows.splice(1,3);
+for(let j=0;j<4;j++){         
+    table2.rows[dates.length+1].insertCell(j).innerHTML=LastRowOfrows[j];
 }
 console.log(table1)
 if(table1.rows.length==2){
