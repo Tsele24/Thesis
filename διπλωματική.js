@@ -81,11 +81,82 @@ AllLiquidwastes=RoWs.map(d => parseFloat(d[5]))// επιλέγω από έναν
  AllWastes=Allsolidwastes+AllLiquidwastes;
 rows.push(["Total Waste(kBq)","","","",Allsolidwastes.toFixed(2).toString(),AllLiquidwastes.toFixed(2).toString(),AllWastes.toFixed(2).toString()]);
 }
+function Create_Sums(){
+    if(rows.length<2){
+        return
+    }
+    for(var i=1;i<rows.length;i++){
+        alldates[i-1]=rows[i][0]
+    }
+    dates=alldates.filter((v, i, a) => a.indexOf(v) === i);   //αφαίρεση των όμοιων τιμών
+for(var i=0;i<dates.length;i++){
+  Roows[i] = RoWs.filter(function(x){
+      return x[0]==dates[i];
+  }) }
+ SS=[[]];
+ SL=[[]];
+ for(var i=0;i<dates.length;i++){
+    for(var j=0;j<Roows[i].length;j++){
+        SS.push([]);
+        SL.push([]);
+        SS[i].push(parseFloat(Roows[i][j][4]))
+        SL[i].push(parseFloat(Roows[i][j][5]))
+    }
+ SS.length=dates.length;
+ SL.length=dates.length;
+ }
+ if(rows[1].length>6){
+     for(var i=0;i<dates.length;i++){
+         rows[i+1].splice(6,5);
+     }
+ }
+ for(var i=0;i<dates.length;i++){
+     rows[i+1].push("")
+     rows[i+1].push(dates[i])
+     rows[i+1].push(SS[i].reduce((a,b)=>a+b,0).toFixed(2).toString())
+     rows[i+1].push(SL[i].reduce((a,b)=>a+b,0).toFixed(2).toString())
+     Sum_When_delete=SS[i].reduce((a,b)=>a+b,0)+SL[i].reduce((a,b)=>a+b,0)
+     rows[i+1].push(Sum_When_delete.toFixed(2).toString())
+ }
+ return rows;
+}
 function Create_table1(){
-    
+    var table1=document.getElementById("csv_table");
+    if(table1.rows.length>1){
+       while (table1.rows.length > 1) {
+           table1.deleteRow(1);
+         }
+       }
+       for(var i=1;i<rows.length-1;i++){
+        var Row=table1.insertRow(i);
+        for(var j=0;j<6;j++){
+            Row.insertCell(j).innerHTML=rows[i][j];
+        }
+        Row.insertCell(6).innerHTML="<button id=del onclick=Delete(this) ><img src=x-512.png style=width:20px;height:20px; > </button>";
+     }
+     Row=table1.insertRow(rows.length-1);
+     for(let i=0;i<7;i++){
+         Row.insertCell(i).innerHTML=rows[rows.length-1][i];
+     }
+     return table1;
 }
 function Create_table2(){
-
+    let table2=document.getElementById("csv_table_Sums");
+    if(table2.rows.length>1){
+       while (table2.rows.length > 1) {
+           table2.deleteRow(1);
+         }
+    }
+   for(let i=0;i<dates.length;i++){
+        let Rrow=table2.insertRow(i+1);
+        let Cells=Rrow.insertCell(0);
+         Cells.innerHTML=dates[i];
+        }
+   for(let i=0;i<dates.length;i++){
+       for(var j=0;j<3;j++){
+           table2.rows[i+1].insertCell(j+1).innerHTML=rows[i+1][8+j]
+       }
+   }
 }
 function Calcs() {
     if(document.getElementById("tubes").value==0){
@@ -184,7 +255,6 @@ function Calcs() {
     RoWs=RoWs.filter(function(element){
         return element!="";
     }) 
-    console.log(RoWs)
      if(RoWs.length>1){
     let sortByDate = RoWs => {       // κανει τις καταχωρησεις κατα ημερομηνια κατα αυξουσα σειρα
         let sorter = (a, b) => {
@@ -199,39 +269,7 @@ function Calcs() {
         }
      }
      }
-    for(var i=1;i<rows.length;i++){
-        alldates[i-1]=rows[i][0]
-    }
-    dates=alldates.filter((v, i, a) => a.indexOf(v) === i);   //αφαίρεση των όμοιων τιμών
-for(var i=0;i<dates.length;i++){
-  Roows[i] = RoWs.filter(function(x){
-      return x[0]==dates[i];
-  }) }
- SS=[[]]
- SS.push([])
- SL=[[]]
- SL.push([])
- for(var i=0;i<dates.length;i++){
-    for(var j=0;j<Roows[i].length;j++){
-        SS[i].push(parseFloat(Roows[i][j][4]))
-        SL[i].push(parseFloat(Roows[i][j][5]))
-        SS.push([])
-        SL.push([])
-    }
- }
- if(rows[1].length>6){
-     for(var i=0;i<dates.length;i++){
-         rows[i+1].splice(6,5);
-     }
- }
- for(var i=0;i<dates.length;i++){
-     rows[i+1].push("")
-     rows[i+1].push(dates[i])
-     rows[i+1].push(SS[i].reduce((a,b)=>a+b,0).toFixed(2).toString())
-     rows[i+1].push(SL[i].reduce((a,b)=>a+b,0).toFixed(2).toString())
-     Sum_When_delete=SS[i].reduce((a,b)=>a+b,0)+SL[i].reduce((a,b)=>a+b,0)
-     rows[i+1].push(Sum_When_delete.toFixed(2).toString())
- }
+ Create_Sums();
  Sums();
  let overall=rows[rows.length-1].slice(4,7);
  overall.unshift("Total Waste(kBq)");
@@ -245,40 +283,10 @@ for(var i=0;i<dates.length;i++){
         rows[dates.length+1].splice(6,0,"");
      }
  }
- var table1=document.getElementById("csv_table");
- if(table1.rows.length>1){
-    while (table1.rows.length > 1) {
-        table1.deleteRow(1);
-      }
- }
- for(var i=1;i<rows.length-1;i++){
-     var Row=table1.insertRow(i);
-     for(var j=0;j<6;j++){
-         Row.insertCell(j).innerHTML=rows[i][j];
-     }
-     Row.insertCell(6).innerHTML="<button id=del onclick=Delete(this) ><img src=x-512.png style=width:20px;height:20px; > </button>";
-  }
-  Row=table1.insertRow(rows.length-1);
-  for(let i=0;i<7;i++){
-      Row.insertCell(i).innerHTML=rows[rows.length-1][i];
-  }
- var table2=document.getElementById("csv_table_Sums");
- if(table2.rows.length>1){
-    while (table2.rows.length > 1) {
-        table2.deleteRow(1);
-      }
- }
-for(var i=0;i<dates.length;i++){
-     var Rrow=table2.insertRow(i+1)
-     let Cells=Rrow.insertCell(0);
-      Cells.innerHTML=dates[i];
-     }
-for(var i=0;i<dates.length;i++){
-    for(var j=0;j<3;j++){
-        table2.rows[i+1].insertCell(j+1).innerHTML=rows[i+1][8+j]
-    }
-}
-table2.insertRow(dates.length+1)
+ Create_table1();
+ Create_table2();
+let table2=document.getElementById("csv_table_Sums");
+table2.insertRow(dates.length+1);
 for(let i=0;i<4;i++){
     table2.rows[dates.length+1].insertCell(i).innerHTML=rows[dates.length+1][7+i];
 }
@@ -371,7 +379,6 @@ function UploadFileAlert(){
             alert("Caution! The registrations will be deleted, otherwise click cancel.");
         }
     }
-   
 }
   function processFile(){
     var filename=document.getElementById("MyFile").value;
@@ -382,11 +389,8 @@ function UploadFileAlert(){
     var file = document.getElementById("MyFile").files[0];
     var reader = new FileReader();
     reader.readAsText(file);
-    //When the file finish load
     reader.onload = function(event) {
-      //get the file.
       var csv = event.target.result;
-      //split and get the rows in an array
       var notreadyrows = csv.split('\n');
         var readyrows=[];
       for(var i=0;i<notreadyrows.length;i++){
@@ -422,41 +426,9 @@ function UploadFileAlert(){
          rows[i][9]=bn[i];
          rows[i][10]=bm[i];
      }                                                      
-    var table1=document.getElementById("csv_table");
- if(table1.rows.length>1){
-    while (table1.rows.length > 1) {
-        table1.deleteRow(1);
-      }
-    }
-    var table1=document.getElementById("csv_table");
-    for(var i=1;i<rows.length-1;i++){
-        var Row=table1.insertRow(i);
-        for(var j=0;j<6;j++){
-            Row.insertCell(j).innerHTML=rows[i][j];
-        }
-        Row.insertCell(6).innerHTML="<button id=del onclick=Delete(this) ><img src=x-512.png style=width:20px;height:20px; > </button>";
-     }
-     Row=table1.insertRow(rows.length-1);
-     for(let i=0;i<7;i++){
-         Row.insertCell(i).innerHTML=rows[rows.length-1][i];
-     }
-var table2=document.getElementById("csv_table_Sums");
-if(table2.rows.length>1){
-   while (table2.rows.length > 1) {
-       table2.deleteRow(1);
-     }
-}
-for(var i=0;i<dates.length;i++){//
-    var Rrow=table2.insertRow(i+1)
-    let Cells=Rrow.insertCell(0);
-     Cells.innerHTML=dates[i];
-    }
-for(var i=0;i<dates.length;i++){
-   for(var j=0;j<3;j++){
-       table2.rows[i+1].insertCell(j+1).innerHTML=rows[i+1][8+j]
-   }
-}
-var table2=document.getElementById("csv_table_Sums");
+   Create_table1();
+   Create_table2();
+let table2=document.getElementById("csv_table_Sums");
 table2.insertRow(table2.rows.length);
 let LastRowOfrows=rows[rows.length-1];   //προσθέτει και την τελευαταια γραμμη με το Total Sum στου δευτερου πινακα
 LastRowOfrows.splice(1,3);
@@ -465,6 +437,7 @@ for(let j=0;j<4;j++){
 }
 }
 }
+
 function Delete(y){
     let javascriptrow=y.parentNode.parentNode //διαβάζει τον δείκτη της σειράς που πατήθηκε το delete
     while(rows.length>1){
@@ -491,85 +464,24 @@ function Delete(y){
         }
         RoWs.push([]);
     }
-    for(var i=1;i<rows.length-1;i++){
-        alldates[i-1]=rows[i][0]
-    }
-    dates=alldates.filter((v, i, a) => a.indexOf(v) === i);   //αφαίρεση των όμοιων τιμών
-for(var i=0;i<dates.length;i++){
-  Roows[i] = RoWs.filter(function(x){
-      return x[0]==dates[i];
-  }) }
- SS=[[]]
- SS.push([])
- SL=[[]]
- SL.push([])
- for(var i=0;i<dates.length;i++){
-    for(var j=0;j<Roows[i].length;j++){
-        SS[i].push(parseFloat(Roows[i][j][4]))
-        SL[i].push(parseFloat(Roows[i][j][5]))
-        SS.push([])
-        SL.push([])
-    }
- }
- if(rows[1].length>6){
-     for(var i=0;i<dates.length;i++){
-         rows[i+1].splice(6,5);
-     }
- }
- for(var i=0;i<dates.length;i++){
-     rows[i+1].push("")
-     rows[i+1].push(dates[i])
-     rows[i+1].push(SS[i].reduce((a,b)=>a+b,0).toFixed(2).toString())
-     rows[i+1].push(SL[i].reduce((a,b)=>a+b,0).toFixed(2).toString())
-     Sum_When_delete=SS[i].reduce((a,b)=>a+b,0)+SL[i].reduce((a,b)=>a+b,0)
-     rows[i+1].push(Sum_When_delete.toFixed(2).toString())
- }
  rows.pop();
+ Create_Sums();
  RoWs.pop();
  RoWs.shift();
  Sums();
-  console.log(rows)
-  var table1=document.getElementById("csv_table");
-  if(table1.rows.length>1){
-     while (table1.rows.length > 1) {
-         table1.deleteRow(1);
-       }
-  }
-  console.log(rows)
-  for(var i=1;i<rows.length-1;i++){
-      var Row=table1.insertRow(i);
-      for(var j=0;j<6;j++){
-          Row.insertCell(j).innerHTML=rows[i][j];
-      }
-      Row.insertCell(6).innerHTML="<button id=del onclick=Delete(this) ><img src=x-512.png style=width:20px;height:20px; > </button>";
-   }
-   Row=table1.insertRow(rows.length-1);
-   for(let i=0;i<7;i++){
-       Row.insertCell(i).innerHTML=rows[rows.length-1][i];
-   }
- let table2=document.getElementById("csv_table_Sums")
- while(table2.rows.length>1){
-        table2.deleteRow(1);
- }
- for(var i=0;i<dates.length;i++){
-    var Rrow=table2.insertRow(i+1)
-    let Cells=Rrow.insertCell(0);
-     Cells.innerHTML=dates[i];
-    }
-console.log(rows)
-for(var i=0;i<dates.length;i++){
-   for(var j=0;j<3;j++){
-       table2.rows[i+1].insertCell(j+1).innerHTML=rows[i+1][8+j]
-   }
-}
-table2=document.getElementById("csv_table_Sums");
+ Create_table1();
+ Create_table2();
+let table2=document.getElementById("csv_table_Sums");
 table2.insertRow(table2.rows.length);
 let LastRowOfrows=rows[rows.length-1];   //προσθέτει και την τελευαταια γραμμη με το Total Sum στου δευτερου πινακα
 LastRowOfrows.splice(1,3);
 for(let j=0;j<4;j++){         
     table2.rows[dates.length+1].insertCell(j).innerHTML=LastRowOfrows[j];
 }
-console.log(table1)
+if(table2.rows.length==2){
+    table2.deleteRow(1);
+   }
+let table1=document.getElementById("csv_table");
 if(table1.rows.length==2){
     rows.pop();
     document.getElementById("csv_table").deleteRow(1);
