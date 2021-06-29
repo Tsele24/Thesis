@@ -138,7 +138,6 @@ function Data_insert(){
     let tTracer=0;
     let tVolTracer=0;
     let VolPerTube=0;
-    let theoCpmPerTube=0;
     let data=data_set.filter(function(x){
         return x[0]==Kit && x[1]==manufacturer
     })
@@ -166,6 +165,7 @@ function ria_irma_average(){
     let VolPerTube=0;
     let theoCpmPerTube=0;
     let theoRadPerTube=0;
+    document.getElementById("myTotal").value=0;
     let data=data_set.filter(function(x){
         return x[0]==Kit && x[1]==manufacturer
     })
