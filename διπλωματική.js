@@ -36,11 +36,19 @@ function EnKit(){
     if(document.getElementById("kit").value=="Other"){
         document.getElementById("ukit").disabled=false;
     } 
+    else if(document.getElementById("kit").value!="Other"){
+        document.getElementById("ukit").value="";
+        document.getElementById("ukit").disabled=true;
+    }
 }
 function EnManu(){
     if(document.getElementById("manu").value=="Other"){
         document.getElementById("umanu").disabled=false;
     } 
+    else if(document.getElementById("manu").value!="Other"){
+        document.getElementById("umanu").value="";
+        document.getElementById("umanu").disabled=true;
+    }
 }
 function Checkbox1(){
     if(document.getElementById("nominal").checked==true){
